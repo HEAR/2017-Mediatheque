@@ -67,7 +67,7 @@ Template wordpress du fond de la médiathèque de la Haute école des arts du Rh
   - mots clefs
   - auteur (2 champs : titre = nom / + prénom)
   
-  
+  ----
   HTML
 > langage de structure
 > balises
@@ -100,3 +100,22 @@ Site archives médiathèque
 Quel nom ? -> 1er projet nommé médiathèque numérique, mais le nom est trompeur
 -> plutôt un fond d'archive
 
+----
+
+###Les CMS :
+
+CMS -> content management system (systeme de gestion de contenu)
+Framework
+
+
+KIRBY
+INDEXHIBIT
+JOOMLA
+WORDPRESS
+DRUPAL
+KOKEN
+SPIP
+
+WEB 50% CMS
+
+APACHE (logiciel) -> LANGAGE (PHP / JS / CSS) -> FRAMEWORK (SYMPHONY ) -> CMS
