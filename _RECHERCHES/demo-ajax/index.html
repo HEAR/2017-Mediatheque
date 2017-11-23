@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<h1>Démo Ajax</h1>
+
+	<p><a href="page.html">lien</a></p>
+
+
+	<button>Chargement</button>
+
+	<div id="result"></div>
+
+
+	<script>
+		
+		$(document).ready( function(){
+			console.log("démo ajax ok");
+
+			$("button").click(function(event){
+				
+				// $.ajax({
+				// 	url: "page.html",
+				// 	cache: false,
+				// 	dataType: "html"
+				// })
+				// .done(function( html ) {
+
+				// 	console.log( html );
+
+				// 	$('#result').append(
+				// 		$('<div />').html(html).find('div').html()
+			 //        );
+				// });
+
+
+				$.ajax({
+					url: "json.php",
+					cache: false,
+					dataType: "json"
+				})
+				.done(function( data ) {
+
+					console.log( data );
+
+					console.log( data.texte );
+
+
+					$('#result')
+					.append( "<h1>"+ data.titre +"</h1>" )
+					.append( "<p>"+ data.texte +"</p>" );
+
+				});
+
+			});
+
+			
+
+
+		} );
+
+	</script>
+
+</body>
+</html>
