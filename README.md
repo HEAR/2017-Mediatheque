@@ -2,6 +2,29 @@
 Template wordpress du fond de la médiathèque de la Haute école des arts du Rhin
 
 
+## Outils + librairies + tutoriaux
+
+- API JSON : 
+  - https://code.tutsplus.com/tutorials/introducing-the-wp-rest-api--cms-24533
+  - https://www.sitepoint.com/wp-api/
+  - https://www.technosailor.com/2012/02/08/tutorial-using-wordpress-ajax-api/
+  - https://premium.wpmudev.org/blog/using-ajax-with-wordpress/
+  - https://tommcfarlin.com/wordpress-ajax-api-example/
+  - https://developer.wordpress.org/rest-api/reference/posts/#example-request
+  - https://developer.wordpress.org/rest-api/using-the-rest-api/pagination/
+- AJAX :
+  - http://api.jquery.com/jQuery.ajax/
+  - https://stackoverflow.com/questions/4245231/how-do-i-filter-the-returned-data-from-jquery-ajax#4245323
+- MOTEUR DE RECHERCHE :
+  - https://fr.wordpress.org/plugins/relevanssi/#description
+- AJAX NAVIGATION (et préservation de l'historique) :
+  - https://github.com/browserstate/history.js
+  - http://browserstate.github.io/history.js/demo/
+
+
+----
+
+
 ## références :
 - lastbutnotliste.com
 - lineto.com => console de navigation
