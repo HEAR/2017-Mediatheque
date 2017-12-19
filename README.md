@@ -17,6 +17,7 @@ Template wordpress du fond de la médiathèque de la Haute école des arts du Rh
   - https://stackoverflow.com/questions/4245231/how-do-i-filter-the-returned-data-from-jquery-ajax#4245323
 - MOTEUR DE RECHERCHE :
   - https://fr.wordpress.org/plugins/relevanssi/#description
+  - https://gist.github.com/jaredatch/27c42dfdf02b20256cf7b160ab6e55db
 - AJAX NAVIGATION (et préservation de l'historique) :
   - https://github.com/browserstate/history.js
   - http://browserstate.github.io/history.js/demo/
