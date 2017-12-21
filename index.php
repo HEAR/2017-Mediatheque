@@ -5,6 +5,8 @@
 
 <?php 
 
+	// https://wordpress.stackexchange.com/questions/13484/how-to-get-all-posts-with-any-post-status
+
 	global $wp_query;
 	$original_query = $wp_query;
 	$wp_query = null;
