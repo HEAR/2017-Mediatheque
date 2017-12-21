@@ -22,6 +22,7 @@ function comgraph_template_include( $template ) {
 }
 
 // Pour enlever la mention «Protégé : » ou «Privé : » du titre
+// https://css-tricks.com/snippets/wordpress/remove-privateprotected-from-post-titles/#comment-73313
 function title_format($content) {
 	return '🔒%s';
 }
