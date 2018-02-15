@@ -30,7 +30,7 @@
 
 	<div id="overlay"></div>
 
-	<nav>
+	<nav class="draggable">
 		<div class="handle"></div>
 		<?php
     	if ( has_nav_menu( 'main_menu' ) ) {
@@ -40,6 +40,5 @@
     	<div class="col2"></div>
   		<div class="col3"></div>
 	</nav>
-
 	
 <!-- fin header.php -->

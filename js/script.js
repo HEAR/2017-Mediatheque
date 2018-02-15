@@ -29,12 +29,12 @@ jQuery(function($){
 
 
 	$( function() {
-		$( "nav" ).draggable({ handle: ".handle" });
+		$( ".draggable" ).draggable({ handle: ".handle" });
 	} );
 
 
 	// j'écoute les clic de tous les liens, sauf de l'admin bar
-	// $( document ).on( 'click', 'a[href^="http://localhost:8888/Hear-Mediatheque/"]:not(.ab-item)', do_ajax_request );
+	$( document ).on( 'click', 'a[href^="http://localhost:8888/Hear-Mediatheque/"]:not(.ab-item)', do_ajax_request );
 
 	// lors d'un clic, j'exécute une fonction qui prend le lien en paramètre
 	function do_ajax_request( e ) {
@@ -60,9 +60,9 @@ jQuery(function($){
 	        }
 	    }).done( function( data ) {
 	        // var data = $.parseJSON( data );
-	        console.log(data);
+	        console.log("ajax data",data);
 
-	        $('#main').html(data);
+	        $('#fond').html(data);
 
 	        // switch_content( template_actuel, data );
 	    }).error( function() {

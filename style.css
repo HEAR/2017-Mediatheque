@@ -68,6 +68,11 @@ table {
   box-sizing:border-box;
 }
 
+body{
+  
+/*  background: #0F0;
+*/}
+
 
 #fond{
 	position: relative;
@@ -110,6 +115,7 @@ nav {
   position: absolute;
   top: 0;
   left: 0;
+  cursor: crosshair;
 }
 
 ul.menu {

@@ -37,6 +37,7 @@ add_filter('protected_title_format', 'title_format');
 
 
 // MOTEUR DE RECHERCHE
+// https://gist.github.com/jaredatch/27c42dfdf02b20256cf7b160ab6e55db
 
 /**
  * Enqueue scripts and styles.
