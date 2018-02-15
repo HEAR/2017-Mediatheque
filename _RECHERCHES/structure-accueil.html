@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Structure médiathèque</title>
+	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	
+	<main>
+		
+		<header>
+			<h1><a href="#">Médiathèque</a></h1>
+			<p class="description">Fonds de la HEAR</p>
+		</header>
+
+		<nav class="draggable">
+			<div class="handle"></div>
+			<div class="menu-menu-mediatheque-container">
+				<ul id="menu-menu-mediatheque" class="menu">
+					<li id="menu-item-6" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6"><a href="http://localhost:8888/Hear-Mediatheque/">Accueil</a></li>
+					<li id="menu-item-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7"><a href="http://localhost:8888/Hear-Mediatheque/page-d-exemple/">Page d’exemple</a></li>
+					<li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-43"><a href="#">Annuaire</a>
+						<ul class="sub-menu">
+							<li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-9"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/a/">A</a></li>
+							<li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/b/">B</a></li>
+							<li id="menu-item-11" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/c/">C</a></li>
+							<li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/d/">D</a></li>
+							<li id="menu-item-13" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/e/">E</a></li>
+							<li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/f/">F</a></li>
+							<li id="menu-item-15" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/g/">G</a></li>
+							<li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/h/">H</a></li>
+						</ul>
+					</li>
+					<li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-category-parent menu-item-has-children menu-item-8"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/">Annuaire</a>
+						<ul class="sub-menu">
+							<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/j/">J</a></li>
+							<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/k/">K</a></li>
+							<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/l/">L</a></li>
+							<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/m/">M</a></li>
+							<li id="menu-item-21" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/n/">N</a></li>
+							<li id="menu-item-22" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-22"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/o/">O</a></li>
+							<li id="menu-item-23" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/p/">P</a></li>
+							<li id="menu-item-24" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/q/">Q</a></li>
+							<li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/r/">R</a></li>
+							<li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/s/">S</a></li>
+							<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/t/">T</a></li>
+							<li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/u/">U</a></li>
+							<li id="menu-item-29" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/v/">V</a></li>
+							<li id="menu-item-30" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-30"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/w/">W</a></li>
+							<li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-31"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/x/">X</a></li>
+							<li id="menu-item-32" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/y/">Y</a></li>
+							<li id="menu-item-33" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/z/">Z</a></li>
+						</ul>
+					</li>
+					<li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-35"><a href="http://localhost:8888/Hear-Mediatheque/2017/11/23/bonjour-tout-le-monde/">Bonjour tout le monde&nbsp;!</a></li>
+					<li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36"><a href="#">Thèmes</a>
+						<ul class="sub-menu">
+							<li id="menu-item-37" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-37"><a href="http://localhost:8888/Hear-Mediatheque/tag/art/">Art</a></li>
+							<li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-38"><a href="http://localhost:8888/Hear-Mediatheque/tag/art-objet/">Art/objet</a></li>
+							<li id="menu-item-39" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-39"><a href="http://localhost:8888/Hear-Mediatheque/tag/communication/">Communication</a></li>
+							<li id="menu-item-40" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-40"><a href="http://localhost:8888/Hear-Mediatheque/tag/design/">Design</a></li>
+							<li id="menu-item-41" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-41"><a href="http://localhost:8888/Hear-Mediatheque/tag/scenographie/">Scénographie</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="col2"></div>
+	  		<div class="col3"></div>
+		</nav>
+
+		
+		<section class="search">
+			<form class="navbar-form" role="search" method="get" action="">
+				<div class="form-group">
+					<input type="text" name="s" class="form-control search-autocomplete" placeholder="Recherche">
+				</div>
+				<button type="submit" class="fa fa-search">Envoyer</button>
+			</form>
+		</section>
+
+	
+		<footer>
+			<p>Copyright blablabla 2018</p>
+		</footer>
+
+	</main>
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="js/script.js"></script>
+	
+</body>
+</html>

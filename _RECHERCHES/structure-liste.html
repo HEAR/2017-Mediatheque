@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Structure médiathèque</title>
+	 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	
+	<main>
+		
+		<header>
+			<h1><a href="#">Médiathèque</a></h1>
+			<p class="description">Fonds de la HEAR</p>
+		</header>
+
+		<nav class="draggable">
+			<div class="handle"></div>
+			<div class="menu-menu-mediatheque-container">
+				<ul id="menu-menu-mediatheque" class="menu">
+					<li id="menu-item-6" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-6"><a href="http://localhost:8888/Hear-Mediatheque/">Accueil</a></li>
+					<li id="menu-item-7" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-7"><a href="http://localhost:8888/Hear-Mediatheque/page-d-exemple/">Page d’exemple</a></li>
+					<li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-ancestor current-menu-parent menu-item-has-children menu-item-43"><a href="#">Annuaire</a>
+						<ul class="sub-menu">
+							<li id="menu-item-9" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-9"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/a/">A</a></li>
+							<li id="menu-item-10" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-10"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/b/">B</a></li>
+							<li id="menu-item-11" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-11"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/c/">C</a></li>
+							<li id="menu-item-12" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-12"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/d/">D</a></li>
+							<li id="menu-item-13" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-13"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/e/">E</a></li>
+							<li id="menu-item-14" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-14"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/f/">F</a></li>
+							<li id="menu-item-15" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-15"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/g/">G</a></li>
+							<li id="menu-item-16" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-16"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/h/">H</a></li>
+						</ul>
+					</li>
+					<li id="menu-item-8" class="menu-item menu-item-type-taxonomy menu-item-object-category current-category-ancestor current-category-parent menu-item-has-children menu-item-8"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/">Annuaire</a>
+						<ul class="sub-menu">
+							<li id="menu-item-17" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-17"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/j/">J</a></li>
+							<li id="menu-item-18" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-18"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/k/">K</a></li>
+							<li id="menu-item-19" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-19"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/l/">L</a></li>
+							<li id="menu-item-20" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-20"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/m/">M</a></li>
+							<li id="menu-item-21" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-21"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/n/">N</a></li>
+							<li id="menu-item-22" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-22"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/o/">O</a></li>
+							<li id="menu-item-23" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-23"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/p/">P</a></li>
+							<li id="menu-item-24" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-24"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/q/">Q</a></li>
+							<li id="menu-item-25" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-25"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/r/">R</a></li>
+							<li id="menu-item-26" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-26"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/s/">S</a></li>
+							<li id="menu-item-27" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-27"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/t/">T</a></li>
+							<li id="menu-item-28" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-28"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/u/">U</a></li>
+							<li id="menu-item-29" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-29"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/v/">V</a></li>
+							<li id="menu-item-30" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-30"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/w/">W</a></li>
+							<li id="menu-item-31" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-31"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/x/">X</a></li>
+							<li id="menu-item-32" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-32"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/y/">Y</a></li>
+							<li id="menu-item-33" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-33"><a href="http://localhost:8888/Hear-Mediatheque/category/annuaire/z/">Z</a></li>
+						</ul>
+					</li>
+					<li id="menu-item-35" class="menu-item menu-item-type-post_type menu-item-object-post menu-item-35"><a href="http://localhost:8888/Hear-Mediatheque/2017/11/23/bonjour-tout-le-monde/">Bonjour tout le monde&nbsp;!</a></li>
+					<li id="menu-item-36" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36"><a href="#">Thèmes</a>
+						<ul class="sub-menu">
+							<li id="menu-item-37" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-37"><a href="http://localhost:8888/Hear-Mediatheque/tag/art/">Art</a></li>
+							<li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-38"><a href="http://localhost:8888/Hear-Mediatheque/tag/art-objet/">Art/objet</a></li>
+							<li id="menu-item-39" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-39"><a href="http://localhost:8888/Hear-Mediatheque/tag/communication/">Communication</a></li>
+							<li id="menu-item-40" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-40"><a href="http://localhost:8888/Hear-Mediatheque/tag/design/">Design</a></li>
+							<li id="menu-item-41" class="menu-item menu-item-type-taxonomy menu-item-object-post_tag menu-item-41"><a href="http://localhost:8888/Hear-Mediatheque/tag/scenographie/">Scénographie</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+			<div class="col2"></div>
+	  		<div class="col3"></div>
+		</nav>
+
+
+
+	
+		<section class="archives">
+
+			<ul>
+				<li class="publique" data-nbr-medias="4" ><span class="prenom">Prénom</span> <span class="nom">Nom 1</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 2</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 3</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 4</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 5</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 6</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 7</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 8</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 9</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 10</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 11</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 12</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 13</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 14</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 15</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 16</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 17</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 18</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 19</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 20</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 21</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 22</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 23</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 24</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 25</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 26</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 27</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 28</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 29</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 30</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 31</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 32</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 33</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 34</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 35</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 36</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 37</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 38</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 39</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 40</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 41</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 42</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 43</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 44</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 45</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 46</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 47</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 48</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 49</span class="publique"></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 50</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 51</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 52</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 53</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 54</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 55</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 56</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 57</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 58</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 59</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 60</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 61</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 62</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 63</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 64</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 65</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 66</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 67</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 68</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 69</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 70</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 71</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 72</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 73</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 74</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 75</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 76</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 77</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 78</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 79</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 80</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 81</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 82</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 83</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 84</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 85</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 86</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 87</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 88</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 89</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 90</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 91</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 92</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 93</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 94</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 95</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 96</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 97</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 98</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 99</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 100</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 101</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 102</span></li>
+				<li class="publique"><span class="prenom">Prénom</span> <span class="nom">Nom 103</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 104</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 105</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 106</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 107</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 108</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 109</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 110</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 111</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 112</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 113</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 114</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 115</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 116</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 117</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 118</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 119</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 120</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 121</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 122</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 123</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 124</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 125</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 126</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 127</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 128</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 129</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 130</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 131</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 132</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 133</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 134</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 135</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 136</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 137</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 138</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 139</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 140</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 141</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 142</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 143</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 144</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 145</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 146</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 147</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 148</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 149</span></li>
+				<li><span class="prenom">Prénom</span> <span class="nom">Nom 150</span></li>
+			</ul>
+			
+		</section>
+
+	
+		<footer>
+			<p>Copyright blablabla 2018</p>
+		</footer>
+
+	</main>
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="js/script.js"></script>
+	
+</body>
+</html>

@@ -20,10 +20,10 @@
 </head>
 <body>
 
-<div id="page">
+<main>
 	<header>
 		<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-		<p class"description"><?php bloginfo('description'); ?></p>
+		<p class="description"><?php bloginfo('description'); ?></p>
 	</header>
 
 	<div id="fond"></div>

@@ -2,10 +2,10 @@
 
 <footer>
 <p>
-Copyright &#169; <?php print(date(Y)); ?> <?php bloginfo('name'); ?>
+Copyright &#169; <?php print(date(Y)); ?> <?php bloginfo('name'); ?></p>
 </footer>
 
-</div>
+</main>
 
 
 <!-- <?php echo get_num_queries(); ?> requêtes. <?php timer_stop(1); ?> secondes. -->
