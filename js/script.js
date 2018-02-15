@@ -4,6 +4,23 @@ jQuery(function($){
 
 	console.log("Mediathèque JS OK");
 
+
+	/**
+	 * detection des liens internes
+	 */
+	$.expr[':'].internal = function (obj, index, meta, stack) {
+	    // Prepare
+	    var
+	    $this = $(obj),
+	    url = $this.attr('href') || '',
+	    isInternalLink;
+	    // Check link
+	    isInternalLink = /*url.substring(0, rootUrl.length) === rootUrl ||*/ url.indexOf(':') === -1 || obj.hostname == location.hostname;
+	    // Ignore or Keep
+	    return isInternalLink;
+	};
+
+
 	$('.col2, .col3').outerHeight( $("ul.menu").height() + 20);
 
 	$("nav a").click(function(event) {
@@ -34,7 +51,10 @@ jQuery(function($){
 
 
 	// j'écoute les clic de tous les liens, sauf de l'admin bar
-	$( document ).on( 'click', 'a[href^="http://localhost:8888/Hear-Mediatheque/"]:not(.ab-item)', do_ajax_request );
+	// $( document ).on( 'click', 'a[href^="http://localhost:8888/Hear-Mediatheque/"]:not(.ab-item)', do_ajax_request );
+
+	$( document ).on( 'click', 'a:internal:not(.ab-item)', do_ajax_request );
+
 
 	// lors d'un clic, j'exécute une fonction qui prend le lien en paramètre
 	function do_ajax_request( e ) {
