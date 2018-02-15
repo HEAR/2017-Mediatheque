@@ -38,9 +38,7 @@ jQuery(function($){
 			$(".col2").html("");
 		}
 
-		$("nav").css("width","auto");
-
-		
+		$("nav").css("width","auto");	
 
 	})
 

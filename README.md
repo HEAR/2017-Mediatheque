@@ -1,5 +1,5 @@
 # 2017-Mediatheque
-Template wordpress du fond de la médiathèque de la Haute école des arts du Rhin
+V1 Template wordpress du fond de la médiathèque de la Haute école des arts du Rhin
 
 
 - https://wphierarchy.com
@@ -25,6 +25,8 @@ Template wordpress du fond de la médiathèque de la Haute école des arts du Rh
   - https://github.com/browserstate/history.js
   - http://browserstate.github.io/history.js/demo/
 
+
+Menu : https://jsfiddle.net/lohic/2Ln2r64j/
 
 ----
 
