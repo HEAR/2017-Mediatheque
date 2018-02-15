@@ -4,9 +4,37 @@ jQuery(function($){
 
 	console.log("Mediathèque JS OK");
 
+	$('.col2, .col3').outerHeight( $("ul.menu").height() + 20);
+
+	$("nav a").click(function(event) {
+		event.preventDefault();
+
+		$(".col2").html("");
+		var submenu = $(this).parent().find('.sub-menu').html();
+
+
+			console.log(submenu);
+
+		if(submenu != undefined){
+			$(".col2").html(submenu);
+		}else{
+			$(".col2").html("");
+		}
+
+		$("nav").css("width","auto");
+
+		
+
+	})
+
+
+	$( function() {
+		$( "nav" ).draggable({ handle: ".handle" });
+	} );
+
 
 	// j'écoute les clic de tous les liens, sauf de l'admin bar
-	$( document ).on( 'click', 'a[href^="http://localhost:8888/HEAR-Mediatheque"]:not(.ab-item)', do_ajax_request );
+	// $( document ).on( 'click', 'a[href^="http://localhost:8888/Hear-Mediatheque/"]:not(.ab-item)', do_ajax_request );
 
 	// lors d'un clic, j'exécute une fonction qui prend le lien en paramètre
 	function do_ajax_request( e ) {
@@ -33,6 +61,9 @@ jQuery(function($){
 	    }).done( function( data ) {
 	        // var data = $.parseJSON( data );
 	        console.log(data);
+
+	        $('#main').html(data);
+
 	        // switch_content( template_actuel, data );
 	    }).error( function() {
 	        // Error

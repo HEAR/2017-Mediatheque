@@ -1,7 +1,12 @@
 <?php
-// if ( function_exists('register_sidebar') )
-// register_sidebar();
 
+
+if ( function_exists('register_nav_menus') )
+register_nav_menus(
+	array(
+		'main_menu'	=> __('Menu principal')
+	)
+);
 
 // https://wordpress.stackexchange.com/questions/13484/how-to-get-all-posts-with-any-post-status
 
@@ -51,6 +56,9 @@ function ja_global_enqueues() {
 		array( 'jquery' ),
 		'1.0.7',
 		true
+	);
+	wp_enqueue_script(
+		'jquery-ui-draggable'
 	);
 	wp_enqueue_script(
 		'global',

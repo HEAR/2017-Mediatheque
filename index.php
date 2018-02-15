@@ -2,6 +2,11 @@
 
 <!-- index.php -->
 
+<?php get_search_form(); ?>
+ 
+
+ <div id="main"></div>
+
 
 <?php 
 
@@ -18,11 +23,12 @@
 	
  ?>
 
+<!--
 <div id="content">
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
 		<div class="post" id="post-<?php the_ID(); ?>">
 
-		<?php if(get_post_status( $ID ) != 'private' ) : ?>
+		<?php if(get_post_status( $ID ) != 'private' || is_user_logged_in() ) : ?>
 
 			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
 			
@@ -62,7 +68,7 @@
 <?php include (TEMPLATEPATH . "/searchform.php"); ?>
 <?php endif; ?>
 </div>
-
+-->
 
 <?php 
 

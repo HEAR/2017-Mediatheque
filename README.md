@@ -2,6 +2,9 @@
 Template wordpress du fond de la médiathèque de la Haute école des arts du Rhin
 
 
+- https://wphierarchy.com
+- http://www.fran6art.com/wordpress/creez-votre-theme-wordpress-de-a-a-z/
+
 ## Outils + librairies + tutoriaux
 
 - API JSON : 

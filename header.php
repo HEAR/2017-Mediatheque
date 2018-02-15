@@ -21,9 +21,25 @@
 <body>
 
 <div id="page">
-	<div id="header">
+	<header>
 		<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
 		<p class"description"><?php bloginfo('description'); ?></p>
-	</div>
+	</header>
 
+	<div id="fond"></div>
+
+	<div id="overlay"></div>
+
+	<nav>
+		<div class="handle"></div>
+		<?php
+    	if ( has_nav_menu( 'main_menu' ) ) {
+    		wp_nav_menu( array('menu'=>'main_menu') );
+    	}
+    	?>
+    	<div class="col2"></div>
+  		<div class="col3"></div>
+	</nav>
+
+	
 <!-- fin header.php -->

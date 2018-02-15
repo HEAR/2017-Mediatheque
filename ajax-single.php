@@ -18,6 +18,6 @@
 <?php else : ?>
 		<p>Désolé, aucun article ne correspond à vos critères.</p>
 <?php endif; ?>
-</div>
+
 
 <!-- fin ajax-single.php -->
