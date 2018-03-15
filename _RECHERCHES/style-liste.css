@@ -1,0 +1,16 @@
+
+section.archives{
+  column-count: 4;
+}
+
+section.archives ul li{
+  font-weight: 300;
+}
+
+section.archives ul li:hover{
+  font-style: italic;
+}
+
+section.archives ul li.publique{
+  font-weight: bold;
+}
