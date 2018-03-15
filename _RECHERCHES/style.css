@@ -68,8 +68,14 @@ table {
   box-sizing:border-box;
 }
 
+html{
+font-size: 20px;
+}
+
 body{
-  
+  font-family: "Helvetica",Arial,sans-serif;
+  font-weight: bold;
+  font-style: normal;
 /*  background: #0F0;
 */}
 
@@ -115,7 +121,7 @@ nav {
   position: absolute;
   top: 0;
   left: 0;
-  cursor: crosshair;
+  cursor: move;
 }
 
 ul.menu {
@@ -157,3 +163,18 @@ ul.menu .sub-menu {
 ul{
   padding:10px;
 }
+
+section.archives{
+  column-count: 4;
+}
+
+section.archives ul li{
+font-weight: 300;
+}
+
+section.archives ul li:hover{
+font-style: italic;
+}
+
+section.archives ul li.publique{
+font-weight: bold;
