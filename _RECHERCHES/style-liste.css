@@ -1,16 +1,55 @@
+/*
+	POUR LES LISTES D'ARCHIVES
+*/
 
 section.archives{
-  column-count: 4;
+	position: fixed;
+	top: 40px;
+	bottom: 40px;
+	width:100%;
+	column-count: 4;
+	background: #F00;
+	/*overflow-x: auto;*/
+	overflow: hidden;
 }
 
 section.archives ul li{
-  font-weight: 300;
+	font-weight: 300;
 }
 
 section.archives ul li:hover{
-  font-style: italic;
+	font-style: italic;
 }
 
 section.archives ul li.publique{
-  font-weight: bold;
+	font-weight: bold;
+}
+
+
+.next, .prev{
+	background: none;
+	border: 0;
+}
+
+.next:hover, .prev:hover{
+	color: red;
+}
+
+
+footer{
+	position: fixed;
+	bottom: 0;
+	right: 0;
+}
+
+@media screen and (max-width : 800px) {
+	section.archives{
+		column-count: 3;
+	}
+}
+
+@media screen and (max-width : 500px) {
+	section.archives{
+		column-count: 2;
+	}
 }

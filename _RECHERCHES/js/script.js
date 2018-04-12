@@ -4,6 +4,20 @@ jQuery(function($){
 
 	console.log("Mediathèque JS OK");
 
+	// $("section.archives").scrollTo(0,0);
+
+	var nbrEcran =  Math.ceil( $("section.archives ul").width() / $("body").width() );
+	$("section.archives ul").width( nbrEcran * $("body").width() ); 
+
+	$(".next").click(function(event){
+		var xscrollVal = '+=' + $("body").width();
+		$("section.archives").scrollTo({top:'',left: xscrollVal }, 800);
+	});
+
+	$(".prev").click(function(event){
+		var xscrollVal = '-=' + $("body").width();
+		$("section.archives").scrollTo({top:'',left: xscrollVal }, 800);
+	});
 
 	/**
 	 * detection des liens internes
@@ -27,7 +41,7 @@ jQuery(function($){
 		event.preventDefault();
 
 		$(".col2").html("");
-		var submenu = $(this).parent().find('.sub-menu').html();
+		var submenu = "<ul class='sub-menu'>" + $(this).parent().find('.sub-menu').html() + "</ul>";
 
 
 			console.log(submenu);
