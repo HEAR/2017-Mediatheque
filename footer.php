@@ -1,5 +1,22 @@
 <!-- footer.php -->
 
+
+</div> <!-- fin fond -->
+
+
+<div id="overlay"></div>
+
+<nav class="draggable">
+	<div class="handle"></div>
+	<?php
+	if ( has_nav_menu( 'main_menu' ) ) {
+		wp_nav_menu( array('menu'=>'main_menu') );
+	}
+	?>
+	<div class="col2"></div>
+		<div class="col3"></div>
+</nav>
+
 <footer>
 <p>
 Copyright &#169; <?php print(date(Y)); ?> <?php bloginfo('name'); ?></p>

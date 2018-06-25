@@ -6,7 +6,7 @@
 <input type="submit" id="searchsubmit" value="Chercher" />
 </div>
 </form>
- -->
+-->
 
 <section class="search">
 	<form class="navbar-form" role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
