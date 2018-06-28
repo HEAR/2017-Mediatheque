@@ -8,21 +8,6 @@
  <div id="main"></div>
 
 
-<?php 
-
-	// https://wordpress.stackexchange.com/questions/13484/how-to-get-all-posts-with-any-post-status
-
-	global $wp_query;
-	$original_query = $wp_query;
-	$wp_query = null;
-	$wp_query = new WP_Query(
-		array(
-			'post_status' => array('publish', 'private')
-		)
-	);
-	
- ?>
-
 <!--
 <div id="content">
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>

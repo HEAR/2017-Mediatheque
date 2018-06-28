@@ -36,6 +36,23 @@ add_filter('protected_title_format', 'title_format');
 
 
 
+// http://www.geekpress.fr/wp-query-creez-des-requetes-personnalisees-dans-vos-themes-wordpress/
+// https://www.billerickson.net/customize-the-wordpress-query/
+// https://wordpress.stackexchange.com/questions/13484/how-to-get-all-posts-with-any-post-status
+function mediatheque_query($query) {
+
+    if($query->is_main_query() ):
+        
+    	$query->set( 'order', 'ASC' );
+    	$query->set( 'posts_per_page', '-1' );
+    	$query->set( 'post_status' , array('publish', 'private') );
+
+    endif;
+
+}
+add_action('pre_get_posts', 'mediatheque_query');
+
+
 // MOTEUR DE RECHERCHE
 // https://gist.github.com/jaredatch/27c42dfdf02b20256cf7b160ab6e55db
 
