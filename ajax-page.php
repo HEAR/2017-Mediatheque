@@ -1,4 +1,8 @@
+<?php get_template_part("isajax-header") ?>
+
 <!-- ajax-page.php -->
+
+<?php $is_single = false; ?>
 
 <div id="content">
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
@@ -19,3 +23,5 @@
 </div>
 
 <!-- fin ajax-page.php -->
+
+<?php get_template_part("isajax-footer") ?>

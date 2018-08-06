@@ -6,6 +6,8 @@
 
 <div id="overlay"></div>
 
+
+
 <nav class="draggable">
 	<div class="handle"></div>
 	<?php
@@ -14,13 +16,9 @@
 	}
 	?>
 	<div class="col2"></div>
-		<div class="col3"></div>
+	<div class="col3"></div>
 </nav>
 
-<footer>
-<p>
-Copyright &#169; <?php print(date(Y)); ?> <?php bloginfo('name'); ?></p>
-</footer>
 
 </main>
 

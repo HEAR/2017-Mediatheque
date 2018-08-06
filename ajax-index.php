@@ -1,6 +1,10 @@
-<?php get_header(); ?>
+<?php get_template_part("isajax-header") ?>
+<?php // get_header(); ?>
+
 
 <!-- index.php -->
+
+<?php $is_single = false; ?>
 
 <?php get_search_form(); ?>
  
@@ -66,4 +70,6 @@
 <!-- fin index.php -->
 
 <?php // get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php // get_footer(); ?>
+
+<?php get_template_part("isajax-footer") ?>

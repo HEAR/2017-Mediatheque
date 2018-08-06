@@ -8,14 +8,23 @@ register_nav_menus(
 	)
 );
 
+// http://www.geekpress.fr/suppression-accents-media/
+add_filter('sanitize_file_name', 'remove_accents' );
+
+
+$is_ajax = false;
+
 // https://wordpress.stackexchange.com/questions/13484/how-to-get-all-posts-with-any-post-status
-
+// http://www.geekpress.fr/tuto-ajax-wordpress-methode-simple/
 // !!! http://boiteaweb.fr/la-navigation-avec-ajax-7743.html
-
-
 add_filter( 'template_include', 'comgraph_template_include' );
 function comgraph_template_include( $template ) {
+	global $is_ajax;
+
 	if( isset( $_SERVER['HTTP_X_REQUESTED_WITH'] ) && $_SERVER['HTTP_X_REQUESTED_WITH']== 'comgraphXMLHttpRequest' ):
+
+		$is_ajax = true;
+
 		$pre = dirname( $template );
 		$suf = basename( $template );
 		$_template = $pre . '/ajax-' . $suf;
@@ -53,8 +62,13 @@ function mediatheque_query($query) {
 add_action('pre_get_posts', 'mediatheque_query');
 
 
+
+
+
 // MOTEUR DE RECHERCHE
 // https://gist.github.com/jaredatch/27c42dfdf02b20256cf7b160ab6e55db
+// https://goodies.pixabay.com/jquery/auto-complete/demo.html
+// https://github.com/Pixabay/jQuery-autoComplete
 
 /**
  * Enqueue scripts and styles.
@@ -75,8 +89,27 @@ function ja_global_enqueues() {
 		'1.0.7',
 		true
 	);
+	wp_enqueue_style(
+		'optiscroll',
+		get_template_directory_uri() . '/js/Optiscroll-3.2.0/dist/optiscroll.css',
+		array(),
+		'3.2.0'
+	);
+	wp_enqueue_script(
+		'optiscroll',
+		get_template_directory_uri() . '/js/Optiscroll-3.2.0/dist/jquery.optiscroll.min.js',
+		array(),
+		'3.2.0'
+	);
 	wp_enqueue_script(
 		'jquery-ui-draggable'
+	);
+	wp_enqueue_script(
+		'fitvids',
+		get_template_directory_uri() . '/js/jquery.fitvids.js',
+		array( 'jquery' ),
+		'1.0.0',
+		true
 	);
 	wp_enqueue_script(
 		'global',
@@ -88,7 +121,7 @@ function ja_global_enqueues() {
 	wp_enqueue_script(
 		'mediatheque',
 		get_template_directory_uri() . '/js/script.js',
-		array( 'jquery' ),
+		array( 'jquery','fitvids','global','jquery-ui-draggable','optiscroll' ),
 		'1.0.0',
 		true
 	);
@@ -135,4 +168,15 @@ function ja_rest_api_search( $request ) {
 	if ( !empty( $results->posts ) ) {
 		return $results->posts;
 	}
+}
+
+
+/**
+ * [force_relative_url description]
+ * https://wordpress.stackexchange.com/questions/63323/get-permalink-without-domain-i-e-get-relative-permalink
+ * @param  [type] $url [description]
+ * @return [type]      [description]
+ */
+function force_relative_url ($url){
+    return preg_replace ('/^(http)?s?:?\/\/[^\/]*(\/?.*)$/i', '$2', '' . $url);
 }

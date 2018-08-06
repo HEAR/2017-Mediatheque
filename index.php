@@ -2,7 +2,7 @@
 
 <!-- index.php -->
  
-<?php get_template_part("index") ?>
+<?php get_template_part("ajax-index") ?>
 
 <!-- fin index.php -->
 

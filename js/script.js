@@ -2,8 +2,16 @@
 jQuery(function($){
 
 
+//// A VOIR pour GULP : http://www.geekpress.fr/wordcamp-paris-themes-gulp/
+
 	console.log("Mediathèque JS OK");
 
+	var rootURL = $('meta[name=identifier-url]').attr('content');
+
+
+	if( $("body").hasClass("admin-bar") ){
+		$("html").css("height", "calc(100% - 32px)");
+	}
 
 	/**
 	 * detection des liens internes
@@ -20,31 +28,26 @@ jQuery(function($){
 	    return isInternalLink;
 	};
 
-
-	$('.col2, .col3').outerHeight( $("ul.menu").height() + 20);
-
-	// $("nav a").click(function(event) {
-	// 	event.preventDefault();
-
-	// 	// console.log( $(this) );
-
-	// 	$("nav a").removeClass('active');
-	// 	$(this).addClass('active');
-
-	// 	$(".col2").html("");
-	// 	var submenu = $(this).parent().find('.sub-menu').html();
+	// var State = History.getState();
+	// var rootURL = $('meta[name=identifier-url]').attr('content');
+	
+	// if ( !History.enabled ) {
+	// 	console.log( 'History.js is disabled for this browser.');
+	// 	return false;
+	// }else{
+	// 	console.log('History.js is OK.');
+	// }
 
 
-	// 	console.log(submenu);
 
-	// 	if(submenu != undefined){
-	// 		$(".col2").html("<ul>"+submenu+"</ul>");
-	// 	}else{
-	// 		$(".col2").html("");
-	// 	}
+	var solo = $(".solo").detach();
 
-	// 	$("nav").css("width","auto");
-	// })
+	solo.appendTo("#overlay");
+
+
+	$(".col2, .col3").outerHeight( $("ul.menu").height() + 20);
+	$(".col2, .col3").hide();
+	$(".col2").optiscroll();
 
 
 	function bindMenuAction(){
@@ -53,25 +56,48 @@ jQuery(function($){
 
 			// console.log( $(this) );
 
-			$("nav a").removeClass('active');
-			$(this).addClass('active');
 
-			$(".col2").html("");
-			var submenu = $(this).parent().find('.sub-menu').html();
+			var submenu = "";
 
+			// console.log("MENU ID", $(this).parent().parent().attr("id"));
 
-			console.log(submenu);
+			if( $(this).parent().parent().attr("id") == "menu-menu-mediatheque" ){
+				// console.log("MAIN MENU");
+				
+				$("nav a").removeClass('active');
+				$(this).addClass('active');
 
-			if(submenu != undefined){
+				$(".col2").hide();
+				$(".col2").html("");
+				submenu = $(this).parent().find('.sub-menu').html();				
+			}else{
+				// console.log("SUB MENU");
+				$(".col2 a").removeClass('active');
+				$(this).addClass('active');
+			}
+
+			
+
+			// console.log("submenu",submenu);
+
+			if(submenu !== "" && submenu !== undefined){
+				$(".col2").scrollTop(0);
 				$(".col2").html("<ul>"+submenu+"</ul>");
 
 				$("nav a").unbind("click");
+
+				$(".col2").show();
+
+				// $(".col2").optiscroll();
+				
 				bindMenuAction();
 			}else{
-				$(".col2").html("");
+				// $(".col2").html("");
 			}
 
 			$("nav").css("width","auto");
+			
+			
 		});
 	}
 
@@ -80,30 +106,40 @@ jQuery(function($){
 
 
 	$( function() {
-		$( ".draggable" ).draggable({ handle: ".handle" });
+		$( "nav.draggable" ).draggable({ handle: ".handle", containment: "body", scroll: false  });
+
+		$('#overlay .draggable').draggable({ handle: ".handle", stack: "#overlay .solo" });
+
+	    $(".media-container").fitVids();
 	} );
 
 
 	// j'écoute les clic de tous les liens, sauf de l'admin bar
 	// $( document ).on( 'click', 'a[href^="http://localhost:8888/Hear-Mediatheque/"]:not(.ab-item)', do_ajax_request );
-
-	$( document ).on( 'click', 'a:internal:not(.ab-item)', do_ajax_request );
+	$( document ).on( 'click', 'a:internal:not(.ab-item, .pdf)', do_ajax_request );
 
 
 	// lors d'un clic, j'exécute une fonction qui prend le lien en paramètre
 	function do_ajax_request( e ) {
-		console.log('AJAX');
-
+		// console.log('do_ajax_request',e);
 
 	    e.preventDefault();
-	    var url = $( this ).attr( 'href' );
-	    perform_ajax_request( url );
+
+
+	    // history.pushState("test", null, "test");
+
+	    if( $(e.currentTarget).parent().hasClass("menu-item-has-children") !== true ){
+
+	    	var url = $( this ).attr( 'href' );
+	    	perform_ajax_request( url, false );
+
+		}
 	}
 
 
 
 	// je fais une requête ajax vers le lien, en poussant comgraphXMLHttpRequest dans les headers
-	function perform_ajax_request( url ) {
+	function perform_ajax_request( url, is_history ) {
 		
 	    $.ajax({
 	        url    : url,
@@ -113,10 +149,55 @@ jQuery(function($){
 	            'X-Requested-With':'comgraphXMLHttpRequest'
 	        }
 	    }).done( function( data ) {
-	        // var data = $.parseJSON( data );
-	        console.log("ajax data",data);
+	        var data = $.parseJSON( data );
+	        // console.log("perform_ajax_request data",data);
 
-	        $('#fond').html(data);
+	        // console.log("relative url", data.relative_url, rootURL, data.relative_url.replace(rootURL, "") );
+
+	        if(data.is_single === true){
+
+	        	$('#overlay').append(data.content);
+	        	$('#overlay .draggable').draggable({ handle: ".handle", stack: "#overlay .solo" });
+
+	        	$(".media-container").fitVids();
+
+	        }else{
+
+	        	$('#fond').html(data.content);
+
+	        	// on réactive le champ de suggestion si nécessaire
+	        	var searchRequest;
+				$('.search-autocomplete').autoComplete({
+					minChars: 2,
+					source: function(term, suggest){
+						try { searchRequest.abort(); } catch(e){}
+						searchRequest = $.get( global.search_api, { term: term }, function( res ) {
+							if ( res !== null ) {
+								var results = [];
+								console.log("result search", res);
+								for(var key in res) {
+									results.push(res[key].post_title)
+								}
+
+								suggest(results);
+							}
+						});
+					},
+					onSelect: function(e, term, item){
+						console.log("onselect", term, item);
+
+						// alert(<b>'Item "'</b>+item.data(<b>'langname'</b>)+<b>' ('</b>+item.data(<b>'lang'</b>)+<b>')" selected by '</b>+(e.type == <b>'keydown'</b> ? <b>'pressing enter'</b> : <b>'mouse click'</b>)+<b>'.'</b>);
+					}
+				});
+	        }
+
+	        $("body").attr("class", data.body_class);
+
+	        document.title = data.title;
+
+	        if(is_history === false){
+	        	history.pushState({title:data.title,url:data.relative_url}, null, data.relative_url );
+	    	}
 
 	        // switch_content( template_actuel, data );
 	    }).error( function() {
@@ -124,6 +205,36 @@ jQuery(function($){
 	        alert( 'Impossible de mettre à jour le contenu' );
 	    });
 	}
+
+
+	/**
+	 * [description]
+	 * !!! https://css-tricks.com/using-the-html5-history-api/
+	 * https://developer.mozilla.org/fr/docs/Web/Guide/DOM/Manipuler_historique_du_navigateur/Example
+	 * https://github.com/giabao/mdn-ajax-nav-example
+	 * https://stackoverflow.com/questions/31528432/how-do-i-use-window-history-in-javascript
+	 * @param  {[type]} e) {		var       character [description]
+	 * @return {[type]}    [description]
+	 */
+	window.addEventListener('popstate', function(e) {
+		var currentState = e.state;
+
+		// console.log('popstate',e);
+
+		if (currentState == null) {
+			// removeCurrentClass();
+			// textWrapper.innerHTML = " ";
+			// content.innerHTML = " ";
+			// document.title = defaultTitle;
+		} else {
+			// updateText(character);
+			// requestContent(character + ".html");
+			// addCurrentClass(character);
+			// document.title = "Ghostbuster | " + character;
+
+			perform_ajax_request(currentState.url, true);
+		}
+	});
 
 
 	//la fonction pour la bascule des contenus

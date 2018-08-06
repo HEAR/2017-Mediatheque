@@ -7,11 +7,11 @@
             "label": "Nom",
             "name": "nom",
             "type": "text",
-            "instructions": "",
+            "instructions": "artiste \/ auteur \/ conférencier \/ réalisateur",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -26,11 +26,11 @@
             "label": "Prénom",
             "name": "prenom",
             "type": "text",
-            "instructions": "",
+            "instructions": "&nbsp;",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -49,7 +49,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "33",
                 "class": "",
                 "id": ""
             },
@@ -60,10 +60,56 @@
             "maxlength": ""
         },
         {
-            "key": "field_5a8599864596e",
-            "label": "Audio\/Vidéo embed",
-            "name": "medias",
-            "type": "repeater",
+            "key": "field_5b61bd65e54a2",
+            "label": "Langue",
+            "name": "langue",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "fr:FR": "fr:FR",
+                "en:EN": "en:EN",
+                "de:DE": "de:DE",
+                "es:ES": "es:ES",
+                "it:IT": "it:IT"
+            },
+            "default_value": [
+                "fr"
+            ],
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "label",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_5b61bcfe16a3c",
+            "label": "Durée",
+            "name": "duree",
+            "type": "time_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "H:i:s",
+            "return_format": "H:i:s"
+        },
+        {
+            "key": "field_5b61f2bb86991",
+            "label": "Documents",
+            "name": "documents",
+            "type": "flexible_content",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -72,29 +118,132 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_5a8599c64596f",
-                    "label": "Média",
-                    "name": "media",
-                    "type": "oembed",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "width": "",
-                    "height": ""
+            "layouts": {
+                "5b61f2d5c0db7": {
+                    "key": "5b61f2d5c0db7",
+                    "name": "video",
+                    "label": "Video",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b61f32e3fb54",
+                            "label": "URL",
+                            "name": "url",
+                            "type": "oembed",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "width": "",
+                            "height": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5b61f36b3fb55": {
+                    "key": "layout_5b61f36b3fb55",
+                    "name": "audio-pdf",
+                    "label": "Audio",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b61f37b3fb56",
+                            "label": "URL",
+                            "name": "url",
+                            "type": "file",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "url",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5b632c050f284": {
+                    "key": "layout_5b632c050f284",
+                    "name": "pdf",
+                    "label": "PDF",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b632c3b0f286",
+                            "label": "download",
+                            "name": "download",
+                            "type": "post_object",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [
+                                "dlm_download"
+                            ],
+                            "taxonomy": [],
+                            "allow_null": 0,
+                            "multiple": 0,
+                            "return_format": "object",
+                            "ui": 1
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "layout_5b61f3bb3fb57": {
+                    "key": "layout_5b61f3bb3fb57",
+                    "name": "image",
+                    "label": "Image",
+                    "display": "row",
+                    "sub_fields": [
+                        {
+                            "key": "field_5b61f3c03fb58",
+                            "label": "url",
+                            "name": "url",
+                            "type": "image",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "preview_size": "thumbnail",
+                            "library": "uploadedTo",
+                            "min_width": "",
+                            "min_height": "",
+                            "min_size": "",
+                            "max_width": "",
+                            "max_height": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
-            ]
+            },
+            "button_label": "Ajouter un document",
+            "min": "",
+            "max": ""
         }
     ],
     "location": [
@@ -114,5 +263,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1518705395
+    "modified": 1533226164
 }
