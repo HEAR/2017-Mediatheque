@@ -89,6 +89,12 @@ function ja_global_enqueues() {
 		'1.0.7',
 		true
 	);
+	wp_enqueue_script(
+		'scrollto',
+		get_template_directory_uri() . '/js/jquery.scrollTo-2.1.2/jquery.scrollTo.min.js',
+		array('jquery'),
+		'2.1.2'
+	);
 	wp_enqueue_style(
 		'optiscroll',
 		get_template_directory_uri() . '/js/Optiscroll-3.2.0/dist/optiscroll.css',
@@ -98,7 +104,7 @@ function ja_global_enqueues() {
 	wp_enqueue_script(
 		'optiscroll',
 		get_template_directory_uri() . '/js/Optiscroll-3.2.0/dist/jquery.optiscroll.min.js',
-		array(),
+		array( 'jquery' ),
 		'3.2.0'
 	);
 	wp_enqueue_script(

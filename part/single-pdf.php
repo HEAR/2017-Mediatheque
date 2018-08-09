@@ -1,11 +1,19 @@
 <!-- pdf.php -->
+<?php
 
+global $posX;
+global $posY;
+global $zIndex;
 
-<div class="solo draggable">
+$posX   += 20;
+$posY   += 20;
+$zIndex -= 1;
+
+?>
+
+<div class="solo draggable" style="top:<?= $posY; ?>px;left:<?= $posX; ?>px;z-index:<?= $zIndex; ?>;">
 	<div class="handle"></div>
 	
-	<div class="container">
-
 <?php
 
 $downloads = get_sub_field('download');
@@ -22,7 +30,9 @@ if( $downloads ):
 		try {
 
 			$download = download_monitor()->service( 'download_repository' )->retrieve_single( get_the_ID() );
-			echo "<a href='".$download->get_the_download_link()."' class='pdf' rel='nofollow'>".$download->get_the_title()."</a>\n" ;
+
+			echo "<div class='media-container'><a href='". $download->get_the_download_link() ."' class='pdf' rel='nofollow'>". $download->get_the_image() . "</a></div>\n";
+			echo "<div class='container'>PDF : <a href='". $download->get_the_download_link() ."' class='pdf' rel='nofollow'><h2>" . $download->get_the_title() . "</h2>" ."</a></div>\n" ;
 
 		} catch ( Exception $exception ) {
 			// no download with ID 4 found
@@ -34,7 +44,7 @@ if( $downloads ):
 endif;
 
 ?>
-	</div>
+
 </div>
 
 <!-- fin pdf.php -->

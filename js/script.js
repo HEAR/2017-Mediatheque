@@ -7,6 +7,7 @@ jQuery(function($){
 	console.log("Mediathèque JS OK");
 
 	var rootURL = $('meta[name=identifier-url]').attr('content');
+	var nbrEcran;
 
 
 	if( $("body").hasClass("admin-bar") ){
@@ -49,6 +50,8 @@ jQuery(function($){
 	$(".col2, .col3").hide();
 	$(".col2").optiscroll();
 
+	$("header #legende").hide(); 
+
 
 	function bindMenuAction(){
 		$("nav a").click(function(event) {
@@ -88,8 +91,9 @@ jQuery(function($){
 
 				$(".col2").show();
 
-				// $(".col2").optiscroll();
-				
+				$(".col2").optiscroll();
+				// $(".col2").optiscroll({ forceScrollbars: true });
+			
 				bindMenuAction();
 			}else{
 				// $(".col2").html("");
@@ -102,6 +106,7 @@ jQuery(function($){
 	}
 
 	bindMenuAction();
+	loadContent();
 
 
 
@@ -110,7 +115,21 @@ jQuery(function($){
 
 		$('#overlay .draggable').draggable({ handle: ".handle", stack: "#overlay .solo" });
 
+		$(".draggable .handle")
+		.mouseup(function(){
+			$("body").find('iframe').fadeIn('fast');
+		}).mousedown(function(){
+			$("body").find('iframe').hide();
+		});
+
 	    $(".media-container").fitVids();
+
+
+	 //    $(".draggable").mouseup(function(){
+		// 	$(this).find('iframe').fadeIn('fast');
+		// }).mousedown(function(){
+		// 	$(this).find('iframe').hide();
+		// });
 	} );
 
 
@@ -161,34 +180,19 @@ jQuery(function($){
 
 	        	$(".media-container").fitVids();
 
+
+	        	$(".draggable .handle")
+				.mouseup(function(){
+					$("body").find('iframe').fadeIn('fast'); // this <-> body
+				}).mousedown(function(){
+					$("body").find('iframe').hide();  // this <-> body
+				});
+
 	        }else{
 
 	        	$('#fond').html(data.content);
 
-	        	// on réactive le champ de suggestion si nécessaire
-	        	var searchRequest;
-				$('.search-autocomplete').autoComplete({
-					minChars: 2,
-					source: function(term, suggest){
-						try { searchRequest.abort(); } catch(e){}
-						searchRequest = $.get( global.search_api, { term: term }, function( res ) {
-							if ( res !== null ) {
-								var results = [];
-								console.log("result search", res);
-								for(var key in res) {
-									results.push(res[key].post_title)
-								}
-
-								suggest(results);
-							}
-						});
-					},
-					onSelect: function(e, term, item){
-						console.log("onselect", term, item);
-
-						// alert(<b>'Item "'</b>+item.data(<b>'langname'</b>)+<b>' ('</b>+item.data(<b>'lang'</b>)+<b>')" selected by '</b>+(e.type == <b>'keydown'</b> ? <b>'pressing enter'</b> : <b>'mouse click'</b>)+<b>'.'</b>);
-					}
-				});
+	        	loadContent();				
 	        }
 
 	        $("body").attr("class", data.body_class);
@@ -200,10 +204,47 @@ jQuery(function($){
 	    	}
 
 	        // switch_content( template_actuel, data );
-	    }).error( function() {
+	    }).error( function(data) {
+
+	    	console.log("404",data);
+
+	    	var data = $.parseJSON( data.responseText );
+
+
+	    	if(data.is_single === true){
+
+	        	$('#overlay').append(data.content);
+	        	$('#overlay .draggable').draggable({ handle: ".handle", stack: "#overlay .solo" });
+
+	        	$(".media-container").fitVids();
+
+
+	        	$(".draggable")
+				.mouseup(function(){
+					$("body").find('iframe').fadeIn('fast'); // this <-> body
+				}).mousedown(function(){
+					$("body").find('iframe').hide();  // this <-> body
+				});
+
+	        }else{
+
+	        	$('#fond').html(data.content);
+
+	        	loadContent();				
+	        }
+
+	        $("body").attr("class", data.body_class);
+
+	        document.title = data.title;
+
+	     //    if(is_history === false){
+	     //    	history.pushState({title:data.title,url:data.relative_url}, null, data.relative_url );
+	    	// }
+
 	        // Error
-	        alert( 'Impossible de mettre à jour le contenu' );
+	        // alert( 'Impossible de mettre à jour le contenu' );
 	    });
+
 	}
 
 
@@ -235,6 +276,75 @@ jQuery(function($){
 			perform_ajax_request(currentState.url, true);
 		}
 	});
+
+
+
+	function loadContent(){
+		// on réactive le champ de suggestion si nécessaire
+    	var searchRequest;
+		$('.search-autocomplete').autoComplete({
+			minChars: 2,
+			source: function(term, suggest){
+				try { searchRequest.abort(); } catch(e){}
+				searchRequest = $.get( global.search_api, { term: term }, function( res ) {
+					if ( res !== null ) {
+						var results = [];
+						console.log("result search", res);
+						for(var key in res) {
+							results.push(res[key].post_title)
+						}
+
+						suggest(results);
+					}
+				});
+			},
+			onSelect: function(e, term, item){
+				console.log("onselect", term, item);
+
+				// alert(<b>'Item "'</b>+item.data(<b>'langname'</b>)+<b>' ('</b>+item.data(<b>'lang'</b>)+<b>')" selected by '</b>+(e.type == <b>'keydown'</b> ? <b>'pressing enter'</b> : <b>'mouse click'</b>)+<b>'.'</b>);
+			}
+		});
+
+
+		nbrEcran =  Math.ceil( $("section.archives ul").width() / $("body").width() );
+		$("section.archives ul").width( nbrEcran * $("body").width() ); 
+
+		$(".next")
+		.unbind("click")
+		.click(function(event){
+			console.log("NEXT");
+			var xscrollVal = '+=' + $("body").width();
+			$("section.archives").scrollTo({top:'',left: xscrollVal }, 800);
+		});
+
+		$(".prev")
+		.unbind("click")
+		.click(function(event){
+			console.log("PREV");
+			var xscrollVal = '-=' + $("body").width();
+			$("section.archives").scrollTo({top:'',left: xscrollVal }, 800);
+		});
+
+		$("section.archives li a")
+		.mouseover(function(e){
+			// console.log( $(this).data("legende") );
+
+			$("header #legende .title").text( $(this).data("legende").title );
+			$("header #legende .duree").text( $(this).data("legende").duree );
+			$("header #legende .date").text( $(this).data("legende").date );
+			$("header #legende .cote").text( $(this).data("legende").cote );
+			$("header #legende .nom").text( $(this).data("legende").prenom + " " + $(this).data("legende").nom );
+			$("header #legende .types").text( $(this).data("legende").types );
+			$("header #legende .section").text( $(this).data("legende").section );
+			$("header #legende .langue").text( $(this).data("legende").langue );
+
+			$("header #legende").show(); 
+		})
+		.mouseout(function(e){
+			$("header #legende").hide(); 
+		})
+
+	}
 
 
 	//la fonction pour la bascule des contenus

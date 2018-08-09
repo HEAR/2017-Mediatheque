@@ -1,5 +1,16 @@
 <!-- video.php -->
-<div class="solo draggable">
+<?php
+
+global $posX;
+global $posY;
+global $zIndex;
+
+$posX   += 20;
+$posY   += 20;
+$zIndex -= 1;
+
+?>
+<div class="solo draggable" style="top:<?= $posY; ?>px;left:<?= $posX; ?>px;z-index:<?= $zIndex; ?>;">
 	<div class="handle"></div>
 	
 	<div class="media-container">

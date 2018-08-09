@@ -73,7 +73,7 @@ html, body{
 }
 
 html{
-	font-size: 14px;
+	font-size: 20px;
 }
 
 body{
@@ -100,6 +100,12 @@ body.category{
 body.page{
 	background: #4D83F0;
 }
+
+
+main>header{
+	padding: 10px;
+}
+
 
 a{
 	color: #000;
@@ -168,7 +174,7 @@ ul.menu {
 
 nav a {
 	margin: 0;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	text-decoration: none;
 	color: #000;
 }
@@ -208,13 +214,66 @@ ul{
   padding:10px;
 }
 
+
+
+/*
+	POUR LA HOME AVEC LE CHAMP DE RECHERCHE
+*/
+
+
+section.search{
+	position: fixed;
+	top: 40px;
+	bottom: 40px;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+}
+
+section.search form{
+
+}
+
+section.search form input{
+	font-family: inherit;
+	font-size: 1rem;
+}
+
+section.search form input[type=text]{
+	width:300px;
+	padding: 10px;
+	border: solid 2px #000;
+	display: inline-block;
+}
+
+section.search form button{
+	background: none;
+	border: solid 2px #000;
+	padding: 10px;
+	font-size: 1rem;
+	display: inline-block;
+	float: right;
+}
+
+section.search .form-group{
+	display: inline-block;
+	float: left;
+}
+
+
+/*
+	POUR LES ARCHIVES SEULES
+*/
+
+
 .solo{
 	background: #C4C4C4;
 	border: solid 1px #000;
-	font-size: 1.5rem;
+	font-size: 1rem;
 	width: 400px;
 	position: absolute;
-
 	pointer-events: auto;
 }
 
@@ -224,9 +283,85 @@ ul{
 
 .media-container{
 	padding-top: 10px;
+	background: #333;
+}
+
+
+.media-container + .container{
+	padding-top: 10px;
 }
 
 .media-container img{
 	max-width: 100%;
 	height: auto;
+}
+
+.solo img{
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+h2{
+	margin: 0;
+}
+
+
+/*
+	POUR LES LISTES D'ARCHIVES
+*/
+
+section.archives{
+	position: fixed;
+	top: 50px;
+	bottom: 40px;
+	width:100%;
+	/*overflow-x: auto;*/
+	overflow: hidden;
+	column-count: 4;
+	column-fill: auto;
+	column-rule: 1px solid black;
+	column-gap: 0px;
+}
+
+section.archives ul{
+	padding: 0;
+}
+
+body.admin-bar section.archives{
+	top: 82px;
+}
+
+section.archives ul li{
+	font-weight: 300;
+	padding: 0 10px;
+	break-inside: avoid;
+}
+
+section.archives ul li:hover{
+	/*font-style: italic;*/
+}
+
+section.archives ul li.publique{
+	font-weight: bold;
+}
+
+section.archives ul li span.nom{
+	text-transform: uppercase;
+}
+
+.next, .prev{
+	background: none;
+	border: 0;
+}
+
+.next:hover, .prev:hover{
+	color: red;
+}
+
+
+main>footer{
+	position: fixed;
+	bottom: 0;
+	right: 0;
 }

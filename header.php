@@ -28,7 +28,7 @@
 	</header>
 
 	<div id="fond">
-		<!-- <header>
+		<header>
 			<div id="legende">
 				<p><span class="title"></span> <span class="duree"></span> - (<span class="date"></span>)</p>
 				<p class="cote"></p>
@@ -37,6 +37,6 @@
 				<p class="section"></p>
 				<p class="langue"></p>
 			</div>
-		</header> -->
+		</header>
 
 <!-- fin header.php -->

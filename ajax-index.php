@@ -1,6 +1,4 @@
 <?php get_template_part("isajax-header") ?>
-<?php // get_header(); ?>
-
 
 <!-- index.php -->
 

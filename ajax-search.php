@@ -4,7 +4,7 @@
 
 <?php $is_single = false; ?>
 
-<section class="search">
+<section class="archives search-result">
 
 	<ul>
 

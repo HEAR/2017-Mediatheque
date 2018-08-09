@@ -73,11 +73,11 @@
                 "id": ""
             },
             "choices": {
-                "fr:FR": "fr:FR",
-                "en:EN": "en:EN",
-                "de:DE": "de:DE",
-                "es:ES": "es:ES",
-                "it:IT": "it:IT"
+                "fr": "FR",
+                "en": "EN",
+                "de": "DE",
+                "es": "ES",
+                "it": "IT"
             },
             "default_value": [
                 "fr"
@@ -263,5 +263,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1533226164
+    "modified": 1533812691
 }
