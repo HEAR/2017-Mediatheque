@@ -23,8 +23,11 @@
 
 <main>
 	<header>
-		<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
-		<p class="description"><?php bloginfo('description'); ?></p>
+		<img id="logo" src="<?php echo get_template_directory_uri() ?>/images/logo.png" alt="">
+		<div class="cartouche">
+			<h1><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
+			<p class="description"><?php bloginfo('description'); ?></p>			
+		</div>
 	</header>
 
 	<div id="fond">

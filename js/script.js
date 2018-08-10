@@ -124,6 +124,29 @@ jQuery(function($){
 
 	    $(".media-container").fitVids();
 
+	    $(".solo")
+		.mouseover(function(e){
+			// console.log( $(this).data("legende") );
+
+			$("header #legende .title").text( $(this).data("legende").title );
+			$("header #legende .duree").text( $(this).data("legende").duree );
+			$("header #legende .date").text( $(this).data("legende").date );
+			$("header #legende .cote").text( $(this).data("legende").cote );
+			$("header #legende .nom").text( $(this).data("legende").prenom + " " + $(this).data("legende").nom );
+			$("header #legende .types").text( $(this).data("legende").types );
+			$("header #legende .section").text( $(this).data("legende").section );
+			$("header #legende .langue").text( $(this).data("legende").langue );
+
+			$("header #legende").show(); 
+		})
+		.mouseout(function(e){
+			$("header #legende").hide(); 
+		});
+
+		$(".close").click(function(e){
+			$(this).parent().remove();
+		})
+
 
 	 //    $(".draggable").mouseup(function(){
 		// 	$(this).find('iframe').fadeIn('fast');
@@ -187,6 +210,29 @@ jQuery(function($){
 				}).mousedown(function(){
 					$("body").find('iframe').hide();  // this <-> body
 				});
+
+				$(".solo")
+				.mouseover(function(e){
+					// console.log( $(this).data("legende") );
+
+					$("header #legende .title").text( $(this).data("legende").title );
+					$("header #legende .duree").text( $(this).data("legende").duree );
+					$("header #legende .date").text( $(this).data("legende").date );
+					$("header #legende .cote").text( $(this).data("legende").cote );
+					$("header #legende .nom").text( $(this).data("legende").prenom + " " + $(this).data("legende").nom );
+					$("header #legende .types").text( $(this).data("legende").types );
+					$("header #legende .section").text( $(this).data("legende").section );
+					$("header #legende .langue").text( $(this).data("legende").langue );
+
+					$("header #legende").show(); 
+				})
+				.mouseout(function(e){
+					$("header #legende").hide(); 
+				})
+
+				$(".close").click(function(e){
+					$(this).parent().remove();
+				})
 
 	        }else{
 
@@ -342,7 +388,9 @@ jQuery(function($){
 		})
 		.mouseout(function(e){
 			$("header #legende").hide(); 
-		})
+		});
+
+
 
 	}
 

@@ -16,26 +16,44 @@ $zIndex = 100;
 
 ?>
 <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
-<div class="solo draggable" id="post-<?php the_ID(); ?>" style="top:<?= $posY; ?>px;left:<?= $posX; ?>px;z-index:<?= $zIndex; ?>;">
+
+<?php 
+
+global $data_legende;
+$data_legende 			 = array();
+$data_legende["title"] 	 = get_the_title();
+$data_legende["duree"] 	 = get_field('duree');
+$data_legende["date"] 	 = get_the_time('Y');
+$data_legende["cote"] 	 = get_field('cote');
+$data_legende["nom"] 	 = get_field('nom');
+$data_legende["prenom"]  = get_field('prenom');
+$data_legende["types"] 	 = "catégorie pour les types";
+$data_legende["section"] = "catégorie pour les sections";
+$data_legende["langue"]  = get_field('langue');
+
+ ?>
+
+<div class="solo draggable" id="post-<?php the_ID(); ?>" style="top:<?= $posY; ?>px;left:<?= $posX; ?>px;z-index:<?= $zIndex; ?>;" data-legende="<?php echo htmlentities(json_encode($data_legende, JSON_HEX_APOS)); ?>">
 	<div class="handle"></div>
+	<div class="close"></div>
 	
 	<div class="container">
-		<h2><?php the_title(); ?></h2>
+		<!-- <h2><?php the_title(); ?></h2>
 
-		<p class="postmetadata"><?php the_time('j F Y') ?> par <?php the_author() ?> | Cat&eacute;gorie: <?php the_category(', ') ?>
+		<p class="postmetadata"><?php the_time('j F Y') ?> par <?php the_author() ?> | Cat&eacute;gorie: <?php the_category(', ') ?> -->
 
 		<div class="post_content">
 		<?php the_content(); ?>
 		</div>
 
-		<div class="meta">
+<!-- 		<div class="meta">
 			<p><span class="duree"><?php the_field('duree'); ?></span> - (<span class="date"><?php the_time('Y') ?></span>)</p>
 			<p class="cote"><?php the_field('cote'); ?></p>
 			<p class="nom"><?php the_field('prenom'); ?> <?php the_field('nom'); ?></p>
 			<p class="types"> -> catégorie ?</p>
 			<p class="section"> -> catégorie ?</p>
 			<p class="langue"><?php the_field('langue'); ?></p>
-		</div>
+		</div> -->
 
 	</div>
 </div>

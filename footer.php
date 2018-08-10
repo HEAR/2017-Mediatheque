@@ -21,6 +21,7 @@
 
 
 	<footer>
+		<button class="close-all">X</button>
 		<button class="prev"><</button>
 		<button class="next">></button>
 		<!-- <p>Copyright blablabla 2018</p> -->

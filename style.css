@@ -103,8 +103,34 @@ body.page{
 
 
 main>header{
-	padding: 10px;
+	position: fixed;
+  top: 28px;
+  left: 36px;
+  font-weight: bold;
 }
+
+main>header #logo{
+  height:2rem;
+  float: left;
+}
+
+main>header .cartouche{
+  margin-left: 3rem;
+  width: 300px;
+}
+
+/*main>header h1,
+main>header .description{
+  display: inline-block;
+}
+*/
+/*main>header .description:*/
+
+body.admin-bar main>header{
+  top: 60px;
+}
+
+
 
 
 a{
@@ -162,6 +188,16 @@ nav a.active{
 	left: 0;
 	cursor: move;
 	border-bottom: solid 1px #000;
+}
+
+.close{
+  width:10px;
+  height: 10px;
+  background: #000;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer; 
 }
 
 ul.menu {
@@ -313,28 +349,30 @@ h2{
 
 section.archives{
 	position: fixed;
-	top: 50px;
+	top: 92px;
 	bottom: 40px;
 	width:100%;
 	/*overflow-x: auto;*/
 	overflow: hidden;
 	column-count: 4;
 	column-fill: auto;
-	column-rule: 1px solid black;
+	/*column-rule: 1px solid black;*/
 	column-gap: 0px;
+  padding-top: 28px;
+  border-top: solid 1px #000;
+}
+
+body.admin-bar section.archives{
+  top: 124px;
 }
 
 section.archives ul{
 	padding: 0;
 }
 
-body.admin-bar section.archives{
-	top: 82px;
-}
-
 section.archives ul li{
 	font-weight: 300;
-	padding: 0 10px;
+	padding: 0 36px;
 	break-inside: avoid;
 }
 
@@ -364,4 +402,18 @@ main>footer{
 	position: fixed;
 	bottom: 0;
 	right: 0;
+}
+
+
+#fond header{
+  position: fixed;
+  top: 28px;
+  right: 36px;
+  font-size: 0.6rem;
+  font-weight: bold;
+  column-count: 2;
+}
+
+body.admin-bar #fond header{
+  top: 60px;
 }
