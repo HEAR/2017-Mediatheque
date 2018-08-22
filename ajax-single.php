@@ -10,8 +10,8 @@ global $posX;
 global $posY;
 global $zIndex;
 
-$posX   = 10;
-$posY   = 10;
+$posX   = 32;
+$posY   = 62;
 $zIndex = 100;
 
 ?>
@@ -37,24 +37,26 @@ $data_legende["langue"]  = get_field('langue');
 	<div class="handle"></div>
 	<div class="close"></div>
 	
-	<div class="container">
-		<!-- <h2><?php the_title(); ?></h2>
+	<div class="scroll-container optiscroll">
+		<div class="container">
+			<!-- <h2><?php the_title(); ?></h2>
 
-		<p class="postmetadata"><?php the_time('j F Y') ?> par <?php the_author() ?> | Cat&eacute;gorie: <?php the_category(', ') ?> -->
+			<p class="postmetadata"><?php the_time('j F Y') ?> par <?php the_author() ?> | Cat&eacute;gorie: <?php the_category(', ') ?> -->
 
-		<div class="post_content">
-		<?php the_content(); ?>
+			<div class="post_content">
+			<?php the_content(); ?>
+			</div>
+
+	<!-- 		<div class="meta">
+				<p><span class="duree"><?php the_field('duree'); ?></span> - (<span class="date"><?php the_time('Y') ?></span>)</p>
+				<p class="cote"><?php the_field('cote'); ?></p>
+				<p class="nom"><?php the_field('prenom'); ?> <?php the_field('nom'); ?></p>
+				<p class="types"> -> catégorie ?</p>
+				<p class="section"> -> catégorie ?</p>
+				<p class="langue"><?php the_field('langue'); ?></p>
+			</div> -->
+
 		</div>
-
-<!-- 		<div class="meta">
-			<p><span class="duree"><?php the_field('duree'); ?></span> - (<span class="date"><?php the_time('Y') ?></span>)</p>
-			<p class="cote"><?php the_field('cote'); ?></p>
-			<p class="nom"><?php the_field('prenom'); ?> <?php the_field('nom'); ?></p>
-			<p class="types"> -> catégorie ?</p>
-			<p class="section"> -> catégorie ?</p>
-			<p class="langue"><?php the_field('langue'); ?></p>
-		</div> -->
-
 	</div>
 </div>
 

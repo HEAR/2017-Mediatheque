@@ -12,6 +12,30 @@ register_nav_menus(
 add_filter('sanitize_file_name', 'remove_accents' );
 
 
+
+
+/**
+ * [annee_agenda_taxo_init description]
+ * @return [type] [description]
+ */
+function annee_taxo_init() {
+	// create a new taxonomy
+
+	register_taxonomy(
+		'annee',
+		'post',
+		array(
+			'label' => __( 'Année Scolaire' ),
+			'rewrite' => array( 'slug' => 'annee_scolaire' ),
+			'hierarchical' => true,
+			'show_admin_column' => true,
+		)
+	);
+}
+
+add_action( 'init', 'annee_taxo_init' );
+
+
 $is_ajax = false;
 
 // https://wordpress.stackexchange.com/questions/13484/how-to-get-all-posts-with-any-post-status
@@ -52,14 +76,45 @@ function mediatheque_query($query) {
 
     if( $query->is_main_query()  && ! $query->is_single() && ! $query->is_singular() && ! $query->is_page() ):
         
-    	$query->set( 'order', 'ASC' );
+		// $query->set( 'orderby', 'meta_value');	
+		// $query->set( 'meta_key', 'nom');
+		// $query->set( 'order', 'ASC' );
+
+		// $query->set( 'orderby', array('nom' => 'ASC' ));	
+		// 	$query->set( 'orderby',
+		// 		array(
+		// 		'nom' => 'ASC',
+		// 		'prenom' => 'ASC'
+		// 	)
+		// );
+
+
+    	// https://wordpress.stackexchange.com/questions/225533/order-by-multiple-meta-keys-in-pre-get-posts/261769
+    	// https://support.advancedcustomfields.com/forums/topic/pre_get_posts-order-posts-by-two-different-meta_keys-acf-select-field/
+		$query->set('meta_query', array(
+			'nom' => array(
+				'key' => 'nom',
+			),
+			'prenom' => array(
+				'key' => 'prenom',
+			)                    
+		));
+		 
+		$query->set( 'orderby', array(
+			'nom' => 'ASC',
+			'prenom' => 'ASC'			
+		)); 
+		
     	$query->set( 'posts_per_page', '-1' );
     	$query->set( 'post_status' , array('publish', 'private') );
 
     endif;
 
 }
+
 add_action('pre_get_posts', 'mediatheque_query');
+
+// add_filter('pre_get_posts', 'mediatheque_order', 9);
 
 
 
@@ -76,6 +131,13 @@ add_action('pre_get_posts', 'mediatheque_query');
  * @since 1.0.0
  */
 function ja_global_enqueues() {
+	wp_enqueue_style(
+		'my-mediatheque-extension',
+		get_template_directory_uri() . '/style.css',
+		array( 'jquery-auto-complete','optiscroll' ),
+		'1.0.0'
+	);
+
 	wp_enqueue_style(
 		'jquery-auto-complete',
 		'https://cdnjs.cloudflare.com/ajax/libs/jquery-autocomplete/1.0.7/jquery.auto-complete.css',
@@ -111,6 +173,9 @@ function ja_global_enqueues() {
 		'jquery-ui-draggable'
 	);
 	wp_enqueue_script(
+		'jquery-ui-resizable'
+	);
+	wp_enqueue_script(
 		'fitvids',
 		get_template_directory_uri() . '/js/jquery.fitvids.js',
 		array( 'jquery' ),
@@ -127,7 +192,7 @@ function ja_global_enqueues() {
 	wp_enqueue_script(
 		'mediatheque',
 		get_template_directory_uri() . '/js/script.js',
-		array( 'jquery','fitvids','global','jquery-ui-draggable','optiscroll' ),
+		array( 'jquery','fitvids','global','jquery-ui-draggable','jquery-ui-resizable','optiscroll' ),
 		'1.0.0',
 		true
 	);

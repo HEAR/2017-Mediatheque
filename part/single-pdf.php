@@ -15,6 +15,8 @@ $zIndex -= 1;
 <div class="solo draggable" style="top:<?= $posY; ?>px;left:<?= $posX; ?>px;z-index:<?= $zIndex; ?>;" data-legende="<?php echo htmlentities(json_encode($data_legende, JSON_HEX_APOS)); ?>">
 	<div class="handle"></div>
 	<div class="close"></div>
+
+	<div class="scroll-container optiscroll">
 	
 <?php
 
@@ -33,7 +35,7 @@ if( $downloads ):
 
 			$download = download_monitor()->service( 'download_repository' )->retrieve_single( get_the_ID() );
 
-			echo "<div class='media-container'><a href='". $download->get_the_download_link() ."' class='pdf' rel='nofollow'>". $download->get_the_image() . "</a></div>\n";
+			echo "<div class='media-container'>". $download->get_the_image() . "</div>\n";
 			echo "<div class='container'>PDF : <a href='". $download->get_the_download_link() ."' class='pdf' rel='nofollow'><h2>" . $download->get_the_title() . "</h2>" ."</a></div>\n" ;
 
 		} catch ( Exception $exception ) {
@@ -46,7 +48,7 @@ if( $downloads ):
 endif;
 
 ?>
-
+	</div>
 </div>
 
 <!-- fin pdf.php -->

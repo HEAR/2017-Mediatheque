@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Structure médiathèque</title>
+	 <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+	<!-- <link rel="stylesheet" href="style.css"> -->
+	<!-- <link rel="stylesheet" href="style-liste.css"> -->
+	<!-- <link rel="stylesheet" href="style-menu.css"> -->
+	<!-- <link rel="stylesheet" href="style-recherche.css"> -->
+	<!-- <link rel="stylesheet" href="style-archive.css"> -->
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" href="../js/Optiscroll-3.2.0/dist/optiscroll.css">
+
+
+	<style>
+		
+		#scroll{
+			position: absolute;
+			left:200px;
+			top:200px;
+			width: 200px;
+			height: 200px;
+			background: #F00;
+			min-height: 20px;
+			/*margin-right: 20px;*/
+		}
+/*
+		.optiscroll.is-enabled>.optiscroll-content{
+			right: 10px;
+		}
+*/
+
+		.content{
+			position: absolute;
+			background: #FF0;
+			margin-top: 10px;
+			top: 0;
+			left:0;
+			bottom: 0;
+			right: 0;
+			overflow: auto;
+		}
+
+		.optiscroll-content{
+			margin-right: 10px;
+		}
+
+		.optiscroll-v{
+			top: 0;
+			bottom: 10px;
+		}
+
+		.optiscroll-vtrack{
+			width: 10px;
+			right: 0;
+		}
+
+		.optiscroll-vtrack,
+		.optiscroll-htrack{
+			background: #000;
+			border-radius: 0;
+			box-shadow: 0;
+		}
+
+
+		.resize-handle,
+		.ui-resizable-se{
+			width:10px;
+			height: 10px;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			cursor: nwse-resize;
+			background: #0F0;
+		}
+
+	</style>
+</head>
+<body>
+
+	<div id="scroll">
+		<div class="content optiscroll">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, est, sequi. Deleniti atque aspernatur quos, temporibus fuga quidem delectus vel animi vero eligendi sit, quis amet. Repellendus rerum sit recusandae.</p>
+			<p>Vitae consequuntur natus a eum nihil, vel aliquam. Dolores voluptatum assumenda officiis debitis, quo, ipsum vel facere ullam beatae optio id itaque! Natus, eos necessitatibus cum fugiat dolores nulla illo!</p>
+			<p>Neque aliquid officia rerum nam molestias laborum asperiores laboriosam est cumque, minus deleniti, eius perferendis harum eveniet esse recusandae quasi vitae aperiam accusantium. Nam perferendis, dolore labore a quibusdam obcaecati.</p>
+			<p>Nihil eos eum reiciendis, repellendus, tempore similique rem magnam architecto atque nesciunt fugit modi autem vitae non, eaque cumque earum harum voluptatum. Quas, suscipit, beatae. Perferendis voluptates, eligendi illum odio.</p>
+			<p>Distinctio excepturi neque adipisci sunt autem consequatur veniam eos, nulla earum beatae inventore temporibus totam odio. Fuga, debitis, nisi! Voluptate non saepe, obcaecati cumque quidem aliquam earum quasi et vero.</p>
+			<p>Laudantium consectetur quibusdam molestias illum? At veritatis placeat quo commodi voluptas animi, accusamus itaque doloremque officiis necessitatibus maiores quidem ducimus neque facere, iusto vero autem! Dicta ad molestias totam praesentium.</p>
+			<p>Suscipit, non sapiente provident repellendus iure quis similique ad est molestias quibusdam reiciendis eveniet iusto aliquam quasi incidunt! Quos, eum, facilis. Eius incidunt aut praesentium fugiat placeat deserunt earum, deleniti.</p>
+			<p>Fuga explicabo commodi non soluta quae maxime quisquam impedit nam aut. Magnam nostrum sint aliquid maxime mollitia aperiam porro, voluptas fugiat molestiae vero exercitationem quasi in itaque aliquam qui minus!</p>
+			<p>Officia veniam fugiat ab porro consequatur quasi voluptates, velit voluptatem at minima mollitia, atque placeat eveniet alias totam optio quos veritatis suscipit accusamus! Dignissimos, perferendis dolores nam consectetur tempora aut!</p>
+			<p>Optio dolorem delectus repellendus assumenda id eum rerum voluptatum sequi sit, aspernatur illo recusandae. Earum beatae ea quo dolorem cum possimus aliquam aspernatur molestias voluptatibus? Eveniet voluptatem hic quidem ratione. FIN</p>
+		</div>
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<script src="../js/Optiscroll-3.2.0/dist/jquery.optiscroll.min.js"></script>
+  	<!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="js/script.js"></script> -->
+	
+	<script>
+		
+		$(function(){
+
+			$('#scroll')
+			.resizable({ handles: "se"} );
+
+			$("#scroll .content").optiscroll({ forceScrollbars:  !Optiscroll.G.isTouch  });
+
+
+		})
+
+	</script>
+
+</body>
+</html>
