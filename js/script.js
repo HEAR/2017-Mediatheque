@@ -113,14 +113,19 @@ jQuery(function($){
 	$( function() {
 		$( "nav.draggable" ).draggable({ handle: ".handle", containment: "body", scroll: false  });
 
-		$('#overlay .draggable').draggable({ handle: ".handle", stack: "#overlay .solo" });
+		$('#overlay .draggable')
+		.draggable({ handle: ".handle", stack: "#overlay .solo" })
+		.resizable({ handles: "se"} );
 
-		$(".draggable .handle")
+		$(".draggable .handle, .ui-resizable-handle")
 		.mouseup(function(){
 			$("body").find('iframe').fadeIn('fast');
 		}).mousedown(function(){
 			$("body").find('iframe').hide();
 		});
+
+
+		$(".solo .scroll-container").optiscroll({ forceScrollbars:  !Optiscroll.G.isTouch  });
 
 	    $(".media-container").fitVids();
 
@@ -199,17 +204,21 @@ jQuery(function($){
 	        if(data.is_single === true){
 
 	        	$('#overlay').append(data.content);
-	        	$('#overlay .draggable').draggable({ handle: ".handle", stack: "#overlay .solo" });
+	        	$('#overlay .draggable')
+	        	.draggable({ handle: ".handle", stack: "#overlay .solo" })
+	        	.resizable();
 
 	        	$(".media-container").fitVids();
 
 
-	        	$(".draggable .handle")
+	        	$(".draggable .handle, .ui-resizable-handle")
 				.mouseup(function(){
 					$("body").find('iframe').fadeIn('fast'); // this <-> body
 				}).mousedown(function(){
 					$("body").find('iframe').hide();  // this <-> body
 				});
+
+				$(".solo .scroll-container").optiscroll({ forceScrollbars:  !Optiscroll.G.isTouch  });
 
 				$(".solo")
 				.mouseover(function(e){
@@ -373,7 +382,7 @@ jQuery(function($){
 
 		$("section.archives li a")
 		.mouseover(function(e){
-			// console.log( $(this).data("legende") );
+			console.log( $(this).data("legende") );
 
 			$("header #legende .title").text( $(this).data("legende").title );
 			$("header #legende .duree").text( $(this).data("legende").duree );

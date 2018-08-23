@@ -33,7 +33,7 @@
 <?php endwhile; ?>
 <?php endif; ?>
 
-
+<!-- 
 		<li class="publique" data-nbr-medias="4" ><span class="prenom">Prénom</span> <span class="nom">Nom 1</span></li>
 		<li><span class="prenom">Prénom</span> <span class="nom">Nom 2</span></li>
 		<li><span class="prenom">Prénom</span> <span class="nom">Nom 3</span></li>
@@ -334,7 +334,7 @@
 		<li><span class="prenom">Prénom</span> <span class="nom">Nom 148</span></li>
 		<li><span class="prenom">Prénom</span> <span class="nom">Nom 149</span></li>
 		<li><span class="prenom">Prénom</span> <span class="nom">Nom 150</span></li>
-		<li><span class="prenom">Prénom</span> <span class="nom">END END END</span></li>
+		<li><span class="prenom">Prénom</span> <span class="nom">END END END</span></li> -->
 
 	</ul>
 </div>

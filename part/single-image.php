@@ -16,14 +16,16 @@ $zIndex -= 1;
 	<div class="handle"></div>
 	<div class="close"></div>
 	
-	<div class="media-container">
+	<div class="scroll-container optiscroll">
+		<div class="media-container">
 
-	<?php
+		<?php
 
-		$image = get_sub_field('url');
+			$image = get_sub_field('url');
 
-		echo '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" />'."\n";
-	?>
+			echo '<img src="' . $image['url'] . '" alt="' . $image['alt'] . '" />'."\n";
+		?>
+		</div>
 	</div>
 </div>
 

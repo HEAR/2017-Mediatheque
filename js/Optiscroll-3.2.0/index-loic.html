@@ -75,7 +75,10 @@
     </p>
 
     <script type="text/javascript">
-      var os1 = new Optiscroll(document.getElementById('os1'), {
+
+      console.log(document.getElementById('os1'), document.querySelector('#os1'))
+
+      var os1 = new Optiscroll(/*document.getElementById('os1')*/ document.querySelector('#os1') , {
         maxTrackSize: 70,
         preventParentScroll: true,
         wrapContent: false,

@@ -58,6 +58,11 @@ Une description si il faut.
      border-spacing: 0;
    }
 
+   button{
+    background: none;
+    border: 0;
+   }
+
 /*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 							MEDIATHEQUE
