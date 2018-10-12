@@ -74,7 +74,7 @@ add_filter('protected_title_format', 'title_format');
 // https://wordpress.stackexchange.com/questions/13484/how-to-get-all-posts-with-any-post-status
 function mediatheque_query($query) {
 
-    if( $query->is_main_query()  && ! $query->is_single() && ! $query->is_singular() && ! $query->is_page() ):
+    if( $query->is_main_query() && ! $query->is_single() && ! $query->is_singular() && ! $query->is_page() ):
         
 		// $query->set( 'orderby', 'meta_value');	
 		// $query->set( 'meta_key', 'nom');
