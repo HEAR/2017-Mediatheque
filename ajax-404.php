@@ -12,6 +12,7 @@ $is_single = true;
 
 <div class="solo draggable">
 	<div class="handle"></div>
+	<div class="close"></div>
 	
 	<div class="container">
 		<p>Cette archive n'existe pas ou vous n'y avez pas accès.<br>

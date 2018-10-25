@@ -52,6 +52,10 @@ jQuery(function($){
 
 	$("header #legende").hide(); 
 
+	$(".close-all").click(function(e){
+		$(".solo").remove();
+	})
+
 
 	function bindMenuAction(){
 		$("nav a").click(function(event) {

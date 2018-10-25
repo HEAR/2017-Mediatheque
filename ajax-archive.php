@@ -26,7 +26,7 @@
 
 		 ?>
 
-		<li class="publique" id="archive-<?php the_ID(); ?>">
+		<li class="<?php echo get_post_status()=="publish" ? "publique" : ""; ?>" id="archive-<?php the_ID(); ?>">
 			<h2><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" data-legende="<?php echo htmlentities(json_encode($data_legende, JSON_HEX_APOS)); ?>"><span class="prenom"><?php the_field('prenom'); ?></span> <span class="nom"><?php the_field('nom'); ?></span><!--  | <?php the_title(); ?> --></a></h2>
 		</li>
 

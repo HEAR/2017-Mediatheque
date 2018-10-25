@@ -31,6 +31,18 @@ function annee_taxo_init() {
 			'show_admin_column' => true,
 		)
 	);
+
+
+	register_taxonomy(
+		'type',
+		'post',
+		array(
+			'label' => __( 'Type d’archive' ),
+			'rewrite' => array( 'slug' => 'type' ),
+			'hierarchical' => false,
+			'show_admin_column' => true,
+		)
+	);
 }
 
 add_action( 'init', 'annee_taxo_init' );
@@ -62,7 +74,8 @@ function comgraph_template_include( $template ) {
 // Pour enlever la mention «Protégé : » ou «Privé : » du titre
 // https://css-tricks.com/snippets/wordpress/remove-privateprotected-from-post-titles/#comment-73313
 function title_format($content) {
-	return '🔒%s';
+	// return '🔒%s';
+	return '[%s]';
 }
 add_filter('private_title_format', 'title_format');
 add_filter('protected_title_format', 'title_format');

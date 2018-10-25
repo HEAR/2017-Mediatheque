@@ -4,14 +4,14 @@ Theme URI: http://comgraph.hear.fr/
 Description: Mon thème basé sur le thème de Francis Chouquet.
 Version: 0.1
 Author: Loïc Horellou
- 
+
 Une description si il faut.
 
 */
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
 html, body, div, span, applet, object, iframe,
@@ -65,12 +65,12 @@ button{
 
 /*
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-							MEDIATHEQUE
+			MEDIATHEQUE
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
 
 *{
-  box-sizing:border-box;
+	box-sizing:border-box;
 }
 
 html, body{
@@ -83,7 +83,7 @@ html{
 
 body{
 	font-family: sans-serif;
-  	font-size: 1rem;
+	font-size: 1rem;
 	background: #68E7A3;
 	transition: background-color 0.5s;
 /*  background: #0F0;
@@ -109,36 +109,36 @@ body.page{
 
 
 body.admin-bar section.page{
-  top: 124px;
+	top: 124px;
 }
 
 main>header{
 	position: fixed;
-  top: 28px;
-  left: 36px;
-  font-weight: bold;
+	top: 28px;
+	left: 36px;
+	font-weight: bold;
 }
 
 main>header #logo{
-  height:2rem;
-  float: left;
+	height:2rem;
+	float: left;
 }
 
 main>header .cartouche{
-  margin-left: 3rem;
-  width: 300px;
+	margin-left: 3rem;
+	width: 300px;
 }
 
 /*main>header h1,
 main>header .description{
-  display: inline-block;
+display: inline-block;
 }
 */
 /*main>header .description:*/
 
 body.admin-bar header #legende,
 body.admin-bar main>header{
-  top: 60px;
+	top: 60px;
 }
 
 
@@ -171,6 +171,15 @@ nav{
 }
 
 
+.close-all{
+	cursor: pointer; 
+}
+.next{
+	cursor: pointer; 
+}
+.prev{
+	cursor: pointer; 
+}
 
 
 /* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
@@ -213,13 +222,13 @@ nav a.active{
 }
 
 .close{
-  width:10px;
-  height: 10px;
-  background: #000;
-  position: absolute;
-  top: 0;
-  left: 0;
-  cursor: pointer; 
+	width:10px;
+	height: 10px;
+	background: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	cursor: pointer; 
 }
 
 ul.menu {
@@ -245,12 +254,12 @@ nav a.active{
 }
 
 nav ul{
-  list-style: none;
+	list-style: none;
 }
 
 
 ul.menu .sub-menu {
-  display: none;
+	display: none;
 }
 
 .col2 {
@@ -269,13 +278,13 @@ ul.menu .sub-menu {
 }
 
 ul{
-  padding:10px;
+	padding:10px;
 }
 
 
 
 /*
-	POUR LA HOME AVEC LE CHAMP DE RECHERCHE
+POUR LA HOME AVEC LE CHAMP DE RECHERCHE
 */
 
 
@@ -322,7 +331,7 @@ section.search .form-group{
 
 
 /*
-	POUR LES ARCHIVES SEULES
+POUR LES ARCHIVES SEULES
 */
 
 
@@ -360,6 +369,10 @@ section.search .form-group{
 	max-width: 100%;
 	height: auto;
 	display: block;
+}
+
+.post_content>*:last-child{
+	margin-bottom: 1rem;
 }
 
 h2{
@@ -401,8 +414,22 @@ h2{
 	box-shadow: 0;
 }
 
+.meta{
+	padding:0;
+	margin:0;
+	font-size: 0.6rem; 
+	font-weight: bold;
+}
+
+.meta span{
+	display: inline-block;
+	width: 70px;
+	/*text-align: right;*/
+	margin-right: 5px;
+}
+
 /*
-	POUR LES LISTES D'ARCHIVES
+POUR LES LISTES D'ARCHIVES
 */
 
 section.archives{
@@ -421,7 +448,7 @@ section.archives{
 }
 
 body.admin-bar section.archives{
-  top: 124px;
+	top: 124px;
 }
 
 section.archives ul{
@@ -464,18 +491,18 @@ main>footer{
 
 
 header #legende{
-  position: fixed;
-  top: 28px;
-  right: 36px;
-  font-size: 0.6rem;
-  font-weight: bold;
-  column-count: 2;
-  column-width: 250px;
+	position: fixed;
+	top: 28px;
+	right: 36px;
+	font-size: 0.6rem;
+	font-weight: bold;
+	column-count: 2;
+	column-width: 250px;
 }
 
 
 /*
-	POUR LES PAGES SEULES
+POUR LES PAGES SEULES
 */
 
 section.page{
