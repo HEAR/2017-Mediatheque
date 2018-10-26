@@ -58,6 +58,25 @@
             "first_day": 1
         },
         {
+            "key": "field_5bd1bf500db6d",
+            "label": "Éditeur",
+            "name": "editeur",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5a85996c4596d",
             "label": "Côte",
             "name": "cote",
@@ -280,5 +299,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1540146743
+    "modified": 1540472667
 }
