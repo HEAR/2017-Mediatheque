@@ -1,0 +1,46 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3752058, 2019-04-26T06:31:09-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: HelveticaNeueLTStd-Lt by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-45-light-189171/
+ * 
+ * Webfont: HelveticaNeueLTStd-LtIt by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-46-light-italic-189171/
+ * 
+ * Webfont: HelveticaNeueLTStd-Bd by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-75-bold-189171/
+ * 
+ * Webfont: HelveticaNeueLTStd-BdIt by Linotype
+ * URL: https://www.myfonts.com/fonts/linotype/neue-helvetica/pro-76-bold-italic-189171/
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3752058
+ * Licensed pageviews: 250,000
+ * Webfonts copyright: Copyright &#x00A9; 2014 Monotype Imaging Inc. All rights reserved.
+ * 
+ * © 2019 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/39407a");
+
+  
+@font-face {font-family: 'HelveticaNeueLTStd-Lt';src: url('webfonts/39407A_0_0.eot');src: url('webfonts/39407A_0_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39407A_0_0.woff2') format('woff2'),url('webfonts/39407A_0_0.woff') format('woff'),url('webfonts/39407A_0_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'HelveticaNeueLTStd-LtIt';src: url('webfonts/39407A_1_0.eot');src: url('webfonts/39407A_1_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39407A_1_0.woff2') format('woff2'),url('webfonts/39407A_1_0.woff') format('woff'),url('webfonts/39407A_1_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'HelveticaNeueLTStd-Bd';src: url('webfonts/39407A_2_0.eot');src: url('webfonts/39407A_2_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39407A_2_0.woff2') format('woff2'),url('webfonts/39407A_2_0.woff') format('woff'),url('webfonts/39407A_2_0.ttf') format('truetype');}
+ 
+  
+@font-face {font-family: 'HelveticaNeueLTStd-BdIt';src: url('webfonts/39407A_3_0.eot');src: url('webfonts/39407A_3_0.eot?#iefix') format('embedded-opentype'),url('webfonts/39407A_3_0.woff2') format('woff2'),url('webfonts/39407A_3_0.woff') format('woff'),url('webfonts/39407A_3_0.ttf') format('truetype');}
+ 
