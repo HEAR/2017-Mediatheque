@@ -1,4 +1,6 @@
 ﻿<!-- comments.php -->
+<!-- inutilisé, pas de commentaires -->
+
 
 <?php // Ne pas supprimer ces lignes
 if ('comments.php' == basename($_SERVER['SCRIPT_FILENAME'])) die ('Ne pas t&eacute;l&eacute;charger cette page directement, merci !');

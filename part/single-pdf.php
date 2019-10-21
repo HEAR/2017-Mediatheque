@@ -1,4 +1,4 @@
-<!-- pdf.php -->
+<!-- part/single-pdf.php -->
 <?php
 
 global $posX;
@@ -51,4 +51,4 @@ endif;
 	</div>
 </div>
 
-<!-- fin pdf.php -->
+<!-- fin part/single-pdf.php -->

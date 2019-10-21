@@ -1,6 +1,6 @@
 <?php get_template_part("isajax-header") ?>
 
-<!-- index.php -->
+<!-- ajax-index.php -->
 
 <?php $is_single = false; ?>
 
@@ -65,7 +65,7 @@
 
  ?>
 
-<!-- fin index.php -->
+<!-- fin ajax-index.php -->
 
 <?php // get_sidebar(); ?>
 <?php // get_footer(); ?>

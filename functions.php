@@ -71,6 +71,8 @@ function comgraph_template_include( $template ) {
 	return $template;
 }
 
+
+
 // Pour enlever la mention «Protégé : » ou «Privé : » du titre
 // https://css-tricks.com/snippets/wordpress/remove-privateprotected-from-post-titles/#comment-73313
 function title_format($content) {
@@ -118,7 +120,9 @@ function mediatheque_query($query) {
 			'prenom' => 'ASC'			
 		)); 
 		
+		// on liste tous les articles
     	$query->set( 'posts_per_page', '-1' );
+    	// on liste les articles publiés et privés
     	$query->set( 'post_status' , array('publish', 'private') );
 
     endif;
@@ -219,6 +223,9 @@ function ja_global_enqueues() {
 }
 add_action( 'wp_enqueue_scripts', 'ja_global_enqueues' );
 
+
+
+// MOTEUR DE RECHERCHE AJAX
 
 
 /**

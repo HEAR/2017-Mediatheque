@@ -1,4 +1,4 @@
-<!-- video.php -->
+<!-- part/single-video.php -->
 <?php
 
 global $posX;
@@ -42,4 +42,4 @@ $zIndex -= 1;
 		</div>
 	</div>
 </div>
-<!-- fin video.php -->
+<!-- fin part/single-video.php -->

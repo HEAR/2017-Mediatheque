@@ -2,10 +2,11 @@
 jQuery(function($){
 
 
-//// A VOIR pour GULP : http://www.geekpress.fr/wordcamp-paris-themes-gulp/
+	//// A VOIR pour GULP : http://www.geekpress.fr/wordcamp-paris-themes-gulp/
 
 	console.log("Mediathèque JS OK");
 
+	// Pour récupérer l'URL de base, pour l'historique, cf header.php
 	var rootURL = $('meta[name=identifier-url]').attr('content');
 	var nbrEcran;
 
@@ -29,6 +30,7 @@ jQuery(function($){
 	    return isInternalLink;
 	};
 
+
 	// var State = History.getState();
 	// var rootURL = $('meta[name=identifier-url]').attr('content');
 	
@@ -40,34 +42,31 @@ jQuery(function($){
 	// }
 
 
-
+	// permet de gérer les petites fenetres solo
 	var solo = $(".solo").detach();
-
 	solo.appendTo("#overlay");
 
+	$(".close-all").click(function(e){
+		$(".solo").remove();
+	})
 
+	// colonnes du menu
 	$(".col2, .col3").outerHeight( $("ul.menu").height() + 20);
 	$(".col2, .col3").hide();
 	$(".col2").optiscroll();
 
 	$("header #legende").hide(); 
 
-	$(".close-all").click(function(e){
-		$(".solo").remove();
-	})
-
-
+	
+	// action lorsque l'on clique sur un élément du menu
 	function bindMenuAction(){
 		$("nav a").click(function(event) {
 			event.preventDefault();
-
 			// console.log( $(this) );
-
-
+			
 			var submenu = "";
 
 			// console.log("MENU ID", $(this).parent().parent().attr("id"));
-
 			if( $(this).parent().parent().attr("id") == "menu-menu-mediatheque" ){
 				// console.log("MAIN MENU");
 				
@@ -86,7 +85,6 @@ jQuery(function($){
 			
 
 			// console.log("submenu",submenu);
-
 			if(submenu !== "" && submenu !== undefined){
 				$(".col2").scrollTop(0);
 				$(".col2").html("<ul>"+submenu+"</ul>");
@@ -113,7 +111,9 @@ jQuery(function($){
 	loadContent();
 
 
-
+	// activation du drag&drop pour les boites solo (cf ajax-single.php + part/*.php)
+	// gestion du scroll
+	// gestion de l'afficaheg de la légende au survol des boites .solo
 	$( function() {
 		$( "nav.draggable" ).draggable({ handle: ".handle", containment: "body", scroll: false  });
 
@@ -157,7 +157,7 @@ jQuery(function($){
 		})
 
 
-	 //    $(".draggable").mouseup(function(){
+	    // $(".draggable").mouseup(function(){
 		// 	$(this).find('iframe').fadeIn('fast');
 		// }).mousedown(function(){
 		// 	$(this).find('iframe').hide();
@@ -167,6 +167,7 @@ jQuery(function($){
 
 	// j'écoute les clic de tous les liens, sauf de l'admin bar
 	// $( document ).on( 'click', 'a[href^="http://localhost:8888/Hear-Mediatheque/"]:not(.ab-item)', do_ajax_request );
+	// on fait une requete AJAX pour tous les liens internes sauf les liens admin wordpress et les classes pdf 
 	$( document ).on( 'click', 'a:internal:not(.ab-item, .pdf)', do_ajax_request );
 
 
@@ -206,6 +207,9 @@ jQuery(function($){
 	        // console.log("relative url", data.relative_url, rootURL, data.relative_url.replace(rootURL, "") );
 
 	        if(data.is_single === true){
+
+	        	// on doit pouvoir faire une fonction avec tout ça
+	        	// même chose que la fonction ligne 117
 
 	        	$('#overlay').append(data.content);
 	        	$('#overlay .draggable')
@@ -364,7 +368,8 @@ jQuery(function($){
 			}
 		});
 
-
+		// ici gestion du scroll horizontal des colonnes
+		// le calcul du décalage manque de précision, il faut l'affiner
 		nbrEcran =  Math.ceil( $("section.archives ul").width() / $("body").width() );
 		$("section.archives ul").width( nbrEcran * $("body").width() ); 
 
@@ -409,6 +414,7 @@ jQuery(function($){
 
 
 	//la fonction pour la bascule des contenus
+	// inutilisée, mais faisait partie du tutoriel initial pour les requetes AJAX
 	// switch_content( template_actuel, data ) {
 	//     switch( template_actuel ) {
 	//         case 'detail':

@@ -1,4 +1,4 @@
-<!-- image.php -->
+<!-- part/single-image.php -->
 <?php
 
 global $posX;
@@ -30,4 +30,4 @@ $zIndex -= 1;
 </div>
 
 
-<!-- fin image.php -->
+<!-- fin part/single-image.php -->

@@ -34,6 +34,15 @@
 <?php endif; ?>
 
 <!-- 
+
+	pour un test en statique, et afin d'avoir une liste très longue
+	à supprimer à la fin :
+
+ -->
+
+<!-- 
+
+
 		<li class="publique" data-nbr-medias="4" ><span class="prenom">Prénom</span> <span class="nom">Nom 1</span></li>
 		<li><span class="prenom">Prénom</span> <span class="nom">Nom 2</span></li>
 		<li><span class="prenom">Prénom</span> <span class="nom">Nom 3</span></li>

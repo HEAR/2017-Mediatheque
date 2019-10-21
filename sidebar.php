@@ -1,5 +1,7 @@
 <!-- sidebar.php -->
 
+<!-- Pas utilisé  -->
+
 <div class="sidebar">
 <ul>
 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>

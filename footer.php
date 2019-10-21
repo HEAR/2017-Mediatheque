@@ -7,7 +7,7 @@
 	<div id="overlay"></div>
 
 
-
+	<!-- LE MENU -->
 	<nav class="draggable">
 		<div class="handle"></div>
 		<?php
@@ -21,7 +21,7 @@
 
 
 	<footer>
-		<button class="close-all"><!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In  -->
+		<button class="close-all">
 			<svg version="1.1"
 				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
 				 x="0px" y="0px" width="22.36px" height="22.36px" viewBox="0 0 22.36 22.36" enable-background="new 0 0 22.36 22.36"
@@ -36,7 +36,7 @@
 			</g>
 			</svg>
 		</button>
-		<button class="prev"><!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In  -->
+		<button class="prev">
 			<svg version="1.1"
 				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
 				 x="0px" y="0px" width="14px" height="16px" viewBox="0 0 14 16" enable-background="new 0 0 14 16" xml:space="preserve">
@@ -47,7 +47,7 @@
 			</g>
 			</svg>
 		</button>
-		<button class="next"><!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In  -->
+		<button class="next">
 			<svg version="1.1"
 				 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
 				 x="0px" y="0px" width="14px" height="16px" viewBox="0 0 14 16" enable-background="new 0 0 14 16" xml:space="preserve">
@@ -58,7 +58,6 @@
 			</g>
 			</svg>
 		</button>
-		<!-- <p>Copyright blablabla 2018</p> -->
 	</footer>
 
 
