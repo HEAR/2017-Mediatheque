@@ -186,7 +186,7 @@ nav{
 nav {
 	position: fixed;
 	display: flex;
-	bottom:50px;
+	/*bottom:50px;*/
 	left:50px;
 	width: auto;
 	background: #C4C4C4;

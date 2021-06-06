@@ -149,10 +149,10 @@ add_action('pre_get_posts', 'mediatheque_query');
  */
 function ja_global_enqueues() {
 	wp_enqueue_style(
-		'my-mediatheque-extension',
+		'mediathequeCSS',
 		get_template_directory_uri() . '/style.css',
 		array( 'jquery-auto-complete','optiscroll' ),
-		'1.0.0'
+		'1.0.1'
 	);
 
 	wp_enqueue_style(
@@ -207,10 +207,10 @@ function ja_global_enqueues() {
 		true
 	);
 	wp_enqueue_script(
-		'mediatheque',
+		'mediathequeJS',
 		get_template_directory_uri() . '/js/script.js',
 		array( 'jquery','fitvids','global','jquery-ui-draggable','jquery-ui-resizable','optiscroll' ),
-		'1.0.0',
+		'1.0.2',
 		true
 	);
 	wp_localize_script(

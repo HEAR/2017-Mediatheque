@@ -4,7 +4,7 @@ jQuery(function($){
 
 	//// A VOIR pour GULP : http://www.geekpress.fr/wordcamp-paris-themes-gulp/
 
-	console.log("Mediathèque JS OK");
+	console.log("Mediathèque JS OK 2");
 
 	// Pour récupérer l'URL de base, pour l'historique, cf header.php
 	var rootURL = $('meta[name=identifier-url]').attr('content');
@@ -56,6 +56,10 @@ jQuery(function($){
 	$(".col2").optiscroll();
 
 	$("header #legende").hide(); 
+
+	// pour positionner le menu en bas
+	console.log("nav top position : ", $("body").height() - 50 - $("nav").height())
+	$("nav").css("top", $("body").height() - 50 - $("nav").height() );
 
 	
 	// action lorsque l'on clique sur un élément du menu
@@ -115,6 +119,7 @@ jQuery(function($){
 	// gestion du scroll
 	// gestion de l'afficaheg de la légende au survol des boites .solo
 	$( function() {
+
 		$( "nav.draggable" ).draggable({ handle: ".handle", containment: "body", scroll: false  });
 
 		$('#overlay .draggable')
